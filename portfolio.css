@@ -358,7 +358,7 @@
   font-size:26px; line-height:1; cursor:pointer; z-index:2;
 }
 
-.video-modal__frame{ width:100%; aspect-ratio: 16 / 9; }
+.video-modal__frame{ width:100%; aspect-ratio: 9 / 16; }
 .video-modal__frame video{ width:100%; height:100%; display:block; }
 
 
