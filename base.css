@@ -511,7 +511,7 @@ header {
     margin: 0;
     box-sizing: border-box;
 
-    padding: 10px 30px;    /* больше внутренние отступы */
+    padding: 10px 10px;    /* больше внутренние отступы */
     border-radius: 20px;
   }
 
