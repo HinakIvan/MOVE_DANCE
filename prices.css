@@ -381,7 +381,7 @@ section{ padding: 40px 0; }
     flex-direction: column;
     justify-content: center;         /* instead of space-between */
     align-items: flex-start !important;
-    text-align: left !important;
+    text-align: center !important;
     gap: 6px !important;
 
     /* fine tune: move both a bit left together */
