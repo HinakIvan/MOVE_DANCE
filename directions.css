@@ -1,0 +1,501 @@
+/* =========================================================
+   directions.css — styles for directions.html (standalone)
+   Includes: variables + base + directions navigation + sections
+             + subscription + responsive + image presets
+   ========================================================= */
+
+/* =========================
+   1) Design tokens (variables)
+   ========================= */
+:root{
+  --основной-цвет: #9B7BB8;
+  --основной-темный: #4B296B;
+
+  --фон-светлый: #FBF3FA;
+  --фон-градиент: linear-gradient(135deg, #9B7BB8 0%, #C79ACB 100%);
+
+  --текст-темный: #4B296B;
+  --белый: #ffffff;
+
+  --тень: 0 10px 30px rgba(155, 123, 184, 0.22);
+  --тень-при-наведении: 0 14px 40px rgba(155, 123, 184, 0.30);
+
+  --переход: 180ms ease;
+
+  --радиус-16: 16px;
+  --радиус-20: 20px;
+  --радиус-22: 22px;
+
+  --контейнер: 1180px;
+  --паддинг-гор: 48px;
+
+  --высота-шапки: 76px; /* при необходимости подгоните */
+}
+
+/* =========================
+   2) Base / reset
+   ========================= */
+*{ box-sizing: border-box; }
+
+html, body{ height: 100%; }
+
+body{
+  margin: 0;
+  padding-top: var(--высота-шапки);
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--текст-темный);
+  background: var(--белый);
+  overflow-x: hidden; /* защита от горизонтального выезда */
+}
+
+img{ max-width: 100%; display: block; }
+a{ color: inherit; text-decoration: none; }
+button{ font-family: inherit; }
+
+/* =========================
+   3) Layout helper
+   ========================= */
+.контейнер{
+  width: min(var(--контейнер), calc(100% - var(--паддинг-гор)));
+  margin-inline: auto;
+}
+
+/* =========================
+   4) Top navigation (anchors)
+   ========================= */
+.секция-навигация-направлений{
+  padding: 18px 0 10px;
+  background: var(--белый);
+}
+
+.кнопки-направлений{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* единый финальный стиль кнопок */
+.кнопка-направления{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 26px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #9B7BB8 0%, #c7a8e3 100%);
+  color: var(--белый);
+
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  border: none;
+  box-shadow: 0 10px 24px rgba(155, 123, 184, 0.35);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.кнопка-направления:hover{
+  transform: translateY(-3px);
+  filter: brightness(1.06);
+  box-shadow: 0 16px 36px rgba(155, 123, 184, 0.45);
+}
+
+.кнопка-направления.активная{
+  filter: brightness(1.12);
+  box-shadow: 0 18px 40px rgba(155, 123, 184, 0.55);
+}
+
+/* =========================
+   5) Directions: sections
+   ========================= */
+.секция-направление{
+  padding: 70px 0;
+  background: var(--белый);
+}
+
+.секция-направление.альтернативная{
+  background: var(--фон-светлый);
+}
+
+/* Заголовок как у секций на index (линия слева) */
+.заголовок-направления{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  margin: 0 0 42px;
+  padding: 0;
+
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+
+  text-transform: uppercase;
+  color: var(--основной-цвет);
+}
+
+.заголовок-направления::before{
+  content: "";
+  width: 42px;
+  height: 2px;
+  background: var(--основной-цвет);
+  flex-shrink: 0;
+}
+
+/* =========================
+   6) Directions: layout (stable alternating via grid areas)
+   Требование: секции обёрнуты в .directions-list
+   ========================= */
+.directions-list .содержимое-направления{
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 34px;
+  align-items: start;
+  grid-template-areas: "media info";
+}
+
+/* блоки */
+.directions-list .изображение-направления{ grid-area: media; }
+.directions-list .информация-направления{ grid-area: info; }
+
+/* каждый второй стиль: фото справа */
+.directions-list .секция-направление:nth-child(even) .содержимое-направления{
+  grid-template-areas: "info media";
+}
+
+/* =========================
+   7) Media block (image)
+   ========================= */
+.изображение-направления{
+  border-radius: var(--радиус-22);
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--тень);
+  border: 1px solid rgba(155, 123, 184, 0.25);
+}
+
+.изображение-направления img{
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================
+   8) Text / info
+   ========================= */
+.информация-направления{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;       /* воздух между блоками */
+  padding: 30px 0 0; /* немного опустить контент (регулируйте) */
+}
+
+.блок-информации{ margin: 0; }
+
+.блок-информации h3{
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--основной-цвет);
+}
+
+.блок-информации p{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.9;
+  color: rgba(75, 41, 107, 0.95);
+}
+
+.блок-информации p + p{ margin-top: 12px; }
+
+/* CTA */
+.кнопка-расписание{
+  margin-top: 10px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 20px;
+  border-radius: var(--радиус-16);
+
+  background: var(--фон-градиент);
+  color: var(--белый);
+
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  box-shadow: var(--тень);
+  transition: transform var(--переход), box-shadow var(--переход);
+}
+
+.кнопка-расписание::after{
+  content: "→";
+  font-size: 18px;
+  line-height: 1;
+  transition: transform var(--переход);
+}
+
+.кнопка-расписание:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--тень-при-наведении);
+}
+
+.кнопка-расписание:hover::after{
+  transform: translateX(5px);
+}
+
+/* =========================
+   9) Subscription block (directions page)
+   ========================= */
+.секция-подписка-направления{
+  padding: 60px 0;
+  background: linear-gradient(135deg, #f8f4fc 0%, #f0e8f5 100%);
+}
+
+.блок-подписки{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  padding: 40px;
+
+  background: var(--белый);
+  border-radius: var(--радиус-20);
+  box-shadow: var(--тень);
+  border: 2px solid rgba(0, 0, 0, 0.06);
+}
+
+.qr-код img{
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+}
+
+.текст-подписки h2{
+  margin: 0 0 10px;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--основной-темный);
+}
+
+.текст-подписки p{
+  margin: 0 0 15px;
+  font-size: 14px;
+  color: rgba(75, 41, 107, 0.86);
+}
+
+.ссылка-инстаграм{
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+
+  background: var(--фон-градиент);
+  color: var(--белый);
+
+  font-size: 14px;
+  font-weight: 700;
+  transition: transform var(--переход), box-shadow var(--переход);
+}
+
+.ссылка-инстаграм:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--тень-при-наведении);
+}
+/* =========================================================
+   10) Responsive — CLEAN (no duplicates)
+   Includes:
+   - layout stack on tablet/mobile
+   - nav/buttons sizing
+   - titles/typography
+   - subscription block
+   - mobile image tuner (move image inside)
+   ========================================================= */
+
+
+/* =========================
+   A) Tablet & below (<= 992px)
+   - always image first, then info (even if HTML order is reversed)
+   - enable image tuner variables
+   ========================= */
+@media (max-width: 768px){
+
+  /* Stack layout + stable order via grid areas */
+  .directions-list .содержимое-направления{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 26px !important;
+    grid-template-areas:
+      "media"
+      "info" !important;
+  }
+
+  .directions-list .изображение-направления{ grid-area: media !important; }
+  .directions-list .информация-направления{ grid-area: info !important; }
+
+  /* Safety: disable alternating layout on mobile/tablet */
+  .directions-list .секция-направление:nth-child(even) .содержимое-направления{
+    grid-template-areas:
+      "media"
+      "info" !important;
+  }
+
+  /* -------------------------
+     MOBILE IMAGE TUNER
+     Move image inside via variables
+     ------------------------- */
+  .directions-list .изображение-направления img{
+    height: var(--dir-img-h, 300px);
+    object-fit: cover;
+    object-position: var(--dir-img-x, 50%) var(--dir-img-y, 25%);
+  }
+
+  /* Per-section tuning (edit only % values) */
+  #girly-hip-hop{ --dir-img-y: 50%; }
+  #jazz-funk{     --dir-img-y: 40%; }
+
+  #contemporary{
+    --dir-img-x: 45%;
+    --dir-img-y: 60%;
+  }
+
+  #frame-up{      --dir-img-y: 60%; }
+  #high-heels{    --dir-img-y: 45%; }
+  #mobility{      --dir-img-y: 10%; }
+  #morning-flow{  --dir-img-y: 30%; }
+  #kids{          --dir-img-y: 10%; }
+}
+
+
+/* =========================
+   B) Mobile (<= 768px)
+   - nav/buttons + section spacing + typography
+   ========================= */
+@media (max-width: 768px){
+
+  /* Top navigation */
+  .секция-навигация-направлений{
+    padding: 14px 0 8px;
+  }
+
+  .кнопки-направлений{
+    gap: 12px;
+  }
+
+  .кнопка-направления{
+    padding: 12px 20px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+  }
+
+  /* Sections */
+  .секция-направление{
+    padding: 50px 0;
+  }
+
+  /* Title */
+  .заголовок-направления{
+    font-size: 22px;
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .заголовок-направления::before{
+    width: 36px;
+  }
+
+  /* Image block */
+  .изображение-направления{
+    border-radius: var(--радиус-20);
+  }
+
+  /* Text block */
+  .информация-направления{
+    gap: 26px;
+    padding-top: 18px;
+  }
+
+  .блок-информации h3{
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .блок-информации p{
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* Subscription block */
+  .блок-подписки{
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 18px;
+    gap: 20px;
+  }
+
+  .текст-подписки h2{
+    font-size: 24px;
+  }
+
+  /* If you want different global image height for 768 and below:
+     change only this variable */
+  .directions-list{
+    --dir-img-h: 300px;
+  }
+}
+
+
+/* =========================
+   C) Small mobile (<= 480px)
+   ========================= */
+@media (max-width: 768px){
+
+  .кнопка-направления{
+    padding: 10px 16px;
+    font-size: 11px;
+  }
+
+  .блок-информации h3{
+    font-size: 13px;
+  }
+
+  .блок-информации p{
+    font-size: 14px;
+  }
+
+  .кнопка-расписание{
+    padding: 12px 16px;
+    font-size: 12px;
+    border-radius: 14px;
+  }
+
+  /* Global image height on very small screens */
+  .directions-list{
+    --dir-img-h: 300px;
+  }
+}
+
+
+/* =========================
+   11) Image position presets (optional)
+   NOTE: these work only if you add class="pos-..." to <img>
+   ========================= */
+.pos-strip{    object-position: center 70%; }
+.pos-morning{  object-position: center 20%; }
+.pos-mobil{    object-position: center 10%; }
+.pos-kids{     object-position: center 25% !important; }
+.pos-contemp{  object-position: 35% 60%; }
+.pos-custom-2{ object-position: 60% 35%; }
+

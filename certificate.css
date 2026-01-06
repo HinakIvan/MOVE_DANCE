@@ -1,0 +1,457 @@
+/* =========================================================
+   certificate.css — ВСЁ для certificate.html (standalone)
+   (БЕЗ header / footer / instagram / telegram)
+   Source: certificate.html + styles.css
+   =========================================================
+   Разметка: :contentReference[oaicite:0]{index=0}
+   База/референс стили: :contentReference[oaicite:1]{index=1}
+   ========================================================= */
+
+
+/* =========================================================
+   1) Design tokens (variables)
+   ========================================================= */
+:root{
+  /* Основные цвета */
+  --основной-цвет: #9B7BB8;
+  --основной-светлый: #D4A5C9;
+  --основной-темный: #7A5A9A;
+
+  --акцентный-цвет: #E8A4C9;
+  --акцентный-розовый: #F5C6D6;
+
+  /* Текст */
+  --текст-темный: #4B296B;
+  --текст-светлый: #7C5A96;
+  --текст-основной: #4B296B;
+  --текст-вторичный: #7C5A96;
+
+  --заголовок-цвет: #3A0F5C;
+
+  /* Фон */
+  --белый: #FFFFFF;
+  --фон-светлый: #FDF8FB;
+  --фон-градиент: linear-gradient(135deg, #D4A5C9 0%, #9B7BB8 50%, #7A5A9A 100%);
+
+  /* Эффекты */
+  --тень: 0 4px 20px rgba(155, 123, 184, 0.2);
+  --тень-при-наведении: 0 8px 30px rgba(155, 123, 184, 0.3);
+
+  /* Радиусы */
+  --скругление: 20px;
+  --скругление-маленькое: 10px;
+
+  /* Переходы */
+  --переход: all 0.3s ease;
+}
+
+
+/* =========================================================
+   2) Base reset + base typography
+   ========================================================= */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{ scroll-behavior: smooth; }
+
+body{
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--текст-темный);
+  background: var(--белый);
+  overflow-x: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  transition: var(--переход);
+}
+
+ul{ list-style: none; }
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* =========================================================
+   3) Layout helpers used by certificate.html
+   ========================================================= */
+.контейнер{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* В certificate.html контент лежит в <main class="страница"> */
+.страница{
+  width: 100%;
+}
+
+/* Внутренняя секция страницы */
+.секция-страницы{
+  padding: 80px 0;
+}
+
+
+/* =========================================================
+   4) Shared section header (h1 line + title)
+   ========================================================= */
+.заголовок-секции{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.линия-секции{
+  width: 40px;
+  height: 2px;
+  background: var(--основной-цвет);
+  flex-shrink: 0;
+}
+
+/* В certificate.html h1 без класса — задаём стиль прямо здесь */
+.заголовок-секции h1{
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--основной-цвет);
+}
+
+
+/* =========================================================
+   5) Buttons (нужно для .кнопка + .кнопка-контурная)
+   ========================================================= */
+.кнопка{
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--переход);
+  border: none;
+  text-align: center;
+  background: transparent;
+}
+
+.кнопка-контурная{
+  background: transparent;
+  color: var(--основной-цвет);
+  border: 2px solid var(--основной-цвет);
+}
+
+.кнопка-контурная:hover{
+  background: var(--основной-цвет);
+  color: var(--белый);
+}
+
+
+/* =========================================================
+   6) CERTIFICATE PAGE — main layout
+   ========================================================= */
+.certificate-page{
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+/* HERO (text + banner) */
+.cert-hero{
+  display: grid;
+  grid-template-columns: 1.05fr 1.15fr;
+  gap: 26px;
+  align-items: stretch;
+}
+
+/* Left text card */
+.cert-text{
+  position: relative;
+  border: 1.5px solid rgba(155, 123, 184, 0.45);
+  border-radius: 18px;
+  background: #fff;
+  padding: 18px 20px 18px 46px;
+  line-height: 1.65;
+}
+
+.cert-text p{
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--текст-темный);
+}
+
+.cert-text p:last-child{
+  margin-bottom: 0;
+}
+
+.cert-text strong{
+  color: var(--текст-темный);
+  font-weight: 700;
+}
+
+/* small badge (content comes from i18n) */
+.cert-text-badge{
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Right banner image */
+.cert-banner{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1.5px solid rgba(155, 123, 184, 0.25);
+  background: #f6eef6;
+  min-height: 170px;
+  display: block;
+}
+
+.cert-banner img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* =========================================================
+   7) FORM CARD
+   ========================================================= */
+.cert-form{
+  max-width: 980px;
+  margin: 0 auto;
+  border-radius: 22px;
+  border: 1.5px solid rgba(155, 123, 184, 0.22);
+  background: linear-gradient(
+    180deg,
+    rgba(250, 242, 249, 0.75),
+    rgba(255, 255, 255, 0.9)
+  );
+  padding: 34px 38px 30px;
+}
+
+.cert-form .subhead{
+  margin: 0 0 22px;
+  text-align: center;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(106, 44, 112, 0.9);
+  font-size: 15px;
+}
+
+.cert-form-grid .form-row{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cert-form-grid label{
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(44, 44, 44, 0.9);
+}
+
+.cert-form-grid input,
+.cert-form-grid textarea{
+  width: 100%;
+  border: 1px solid rgba(155, 123, 184, 0.28);
+  border-radius: 10px;
+  padding: 12px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.cert-form-grid textarea{
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* 2 columns grid blocks */
+.grid-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+/* radio rows */
+.radio-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 16px;
+  padding-top: 4px;
+}
+
+.radio-row label,
+.radio-line{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(44, 44, 44, 0.92);
+}
+
+.radio-line{
+  margin-top: 4px;
+}
+
+/* submit button on form */
+.cert-submit{
+  display: block;
+  margin: 22px auto 0;
+  padding: 12px 34px;
+  border-radius: 14px;
+  text-transform: none; /* как в макете */
+}
+
+
+/* =========================================================
+   8) POPUPS (success / error) — used by script.js
+   ========================================================= */
+.popup-overlay{
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.16);
+  z-index: 9999;
+}
+
+.popup-overlay.is-open{ display: flex; }
+
+.popup-card{
+  width: min(600px, 92vw);
+  background: #fbf7fb;
+  border: 2px solid #6b3f83;
+  border-radius: 10px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.16);
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-close{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b3f83;
+  opacity: 0.9;
+}
+
+.popup-content{
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 18px;
+}
+
+.popup-title{
+  margin: 0 0 10px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #3b214a;
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.popup-text{
+  margin: 0;
+  color: #3b214a;
+  opacity: 0.85;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+/* если ты вернёшь правую часть с логотипом — стили уже готовы */
+.popup-right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.popup-logo{
+  width: 160px;
+  max-width: 200%;
+  height: auto;
+  display: block;
+  transform: translateY(2px);
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.14));
+}
+
+
+/* =========================================================
+   9) Responsive
+   ========================================================= */
+@media (max-width: 980px){
+  .cert-hero{
+    grid-template-columns: 1fr;
+  }
+  .cert-banner{
+    min-height: 190px;
+  }
+}
+
+@media (max-width: 640px){
+  .секция-страницы{
+    padding: 56px 0;
+  }
+
+  .заголовок-секции{
+    gap: 14px;
+    margin-bottom: 26px;
+  }
+
+  .заголовок-секции h1{
+    font-size: 26px;
+  }
+
+  .grid-2{
+    grid-template-columns: 1fr;
+  }
+
+  .cert-form{
+    padding: 26px 18px 22px;
+  }
+
+  .popup-content{
+    grid-template-columns: 1fr;
+    padding: 16px 16px 18px;
+  }
+
+  .popup-right{
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+
+  .popup-logo{ width: 150px; }
+}

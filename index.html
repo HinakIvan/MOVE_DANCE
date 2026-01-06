@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title data-i18n-title="page.home.title">MOVE DANCE</title>
+  <meta name="description" data-i18n-meta-key="page.home.desc" content="" />
+
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="99-overrides.css">
+
+  <!-- i18n MUST load before main script -->
+  <script defer src="i18n.js"></script>
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+    
+  <!-- HEADER -->
+  <div data-include="partials/header.html"></div>
+
+
+  <!-- HERO -->
+  <section class="главный-баннер">
+    <div class="фон-баннера">
+       <picture>
+      <!-- MOBILE -->
+      <source media="(max-width: 820px)" srcset="images/main_mb_media.jpg" />
+
+      <!-- DESKTOP -->
+      <img src="images/гл экра.jpg" alt="MOVE Dance Studio" />
+    </picture>
+    </div>
+
+    <div class="затемнение-баннера"></div>
+
+    <div class="содержимое-баннера">
+      <!-- ВАЖНО: текст полностью через i18n -->
+      <h1 class="заголовок-баннера" data-i18n-html="hero.title"></h1>
+
+      <p class="подзаголовок-баннера" data-i18n="hero.subtitle"></p>
+
+      <a class="кнопка кнопка-основная" href="#контакты" data-i18n="cta.book_trial"></a>
+    </div>
+        <!-- MOBILE CTA (показывается только на адаптиве) -->
+
+  </section>
+<div class="hero-cta-mobile">
+  <a class="кнопка кнопка-основная" href="#контакты" data-i18n="cta.book_trial"></a>
+</div>
+
+  <!-- WHY -->
+  <section class="секция-почему-мы" id="о-нас">
+    <div class="контейнер">
+      <div class="заголовок-секции">
+        <span class="линия-секции"></span>
+        <h2 class="название-секции" data-i18n="section.why"></h2>
+      </div>
+
+      <p class="подзаголовок-секции" data-i18n="why.subtitle"></p>
+
+      <ul class="список-преимуществ">
+        <li><span class="иконка-галочки">✓</span><span data-i18n="why.item1"></span></li>
+        <li><span class="иконка-галочки">✓</span><span data-i18n="why.item2"></span></li>
+        <li><span class="иконка-галочки">✓</span><span data-i18n="why.item3"></span></li>
+        <li><span class="иконка-галочки">✓</span><span data-i18n="why.item4"></span></li>
+        <li><span class="иконка-галочки">✓</span><span data-i18n="why.item5"></span></li>
+        <li><span class="иконка-галочки">✓</span><span data-i18n="why.item6"></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+ <div data-include="partials/instagram.html"></div>
+
+  <!-- TEACHERS (оставляем имена как есть, но заголовки/кнопки — i18n) -->
+  <section class="секция-преподаватели" id="преподаватели">
+    <div class="контейнер">
+      <div class="заголовок-секции">
+        <span class="линия-секции"></span>
+        <h2 class="название-секции" data-i18n="teachers.h2"></h2>
+      </div>
+
+      <div class="слайдер-преподавателей">
+        <button class="кнопка-слайдера предыдущий" aria-label="Предыдущий" data-i18n-aria="a11y.prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="сетка-преподавателей">
+          <div class="карточка-преподавателя">
+            <span class="имя-преподавателя" data-i18n="teachers.name.anastasia"></span>
+            <div class="изображение-преподавателя">
+              <img src="images/love_main.jpg" alt="Анастасия - преподаватель танцев" />
+            </div>
+            <div class="информация-преподавателя">
+              <p class="стиль-танца">Contemporary<br />Frame up</p>
+              <a class="кнопка кнопка-контурная" href="directions.html#frame-up" data-i18n="common.learn_more"></a>
+            </div>
+          </div>
+
+          <div class="карточка-преподавателя">
+            <span class="имя-преподавателя" data-i18n="teachers.name.nastya"></span>
+            <div class="изображение-преподавателя">
+              <img src="images/chumak_main.JPG" alt="Настя - преподаватель танцев" />
+            </div>
+            <div class="информация-преподавателя">
+              <p class="стиль-танца">Choreo,<br />Girly hip-hop</p>
+              <a class="кнопка кнопка-контурная" href="directions.html#choreo" data-i18n="common.learn_more"></a>
+            </div>
+          </div>
+
+          <div class="карточка-преподавателя">
+            <span class="имя-преподавателя" data-i18n="teachers.name.diana"></span>
+            <div class="изображение-преподавателя">
+              <img src="images/dian_main.jpg" alt="Диана - преподаватель танцев" />
+            </div>
+            <div class="информация-преподавателя">
+              <p class="стиль-танца">Morning flow,<br />mobility and stretching</p>
+              <a class="кнопка кнопка-контурная" href="directions.html#morning-flow" data-i18n="common.learn_more"></a>
+            </div>
+          </div>
+
+          <div class="карточка-преподавателя">
+            <span class="имя-преподавателя" data-i18n="teachers.name.mila"></span>
+            <div class="изображение-преподавателя">
+              <img src="images/mila_main.JPG" alt="Мила - преподаватель танцев" />
+            </div>
+            <div class="информация-преподавателя">
+              <p class="стиль-танца">Latino,<br />High Heels</p>
+              <a class="кнопка кнопка-контурная" href="directions.html#high-heels" data-i18n="common.learn_more"></a>
+            </div>
+          </div>
+
+          <div class="карточка-преподавателя">
+            <span class="имя-преподавателя" data-i18n="teachers.name.nastenka"></span>
+            <div class="изображение-преподавателя">
+              <img src="images/redko_main copy.JPG" alt="Настенька - преподаватель танцев" />
+            </div>
+            <div class="информация-преподавателя">
+              <p class="стиль-танца">Jazz Funk</p>
+              <a class="кнопка кнопка-контурная" href="directions.html#jazz-funk" data-i18n="common.learn_more"></a>
+            </div>
+          </div>
+        </div>
+
+        <button class="кнопка-слайдера следующий" aria-label="Следующий" data-i18n-aria="a11y.next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="точки-слайдера" aria-hidden="true">
+        <span class="точка активная" data-index="0"></span>
+        <span class="точка" data-index="1"></span>
+        <span class="точка" data-index="2"></span>
+        <span class="точка" data-index="3"></span>
+        <!-- <span class="точка" data-index="4"></span> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section class="секция-цены" id="цены">
+    <div class="контейнер">
+      <div class="заголовок-секции">
+        <span class="линия-секции"></span>
+        <h2 class="название-секции" data-i18n="prices.h2"></h2>
+      </div>
+
+      <div class="содержимое-цен">
+        <!-- Сертификат -->
+        <div class="подарочный-сертификат">
+          <div class="сертификат-внутри">
+            <img src="images/certificate.jpg" alt="Подарочный сертификат MOVE DANCE" />
+          </div>
+          <a class="кнопка кнопка-сертификат" href="certificate.html" data-i18n="cert.btn"></a>
+        </div>
+
+        <!-- Правая часть -->
+        <div class="правая-цены">
+          <div class="сетка-цен">
+            <!-- 1 -->
+            <div class="карточка-цены">
+              <div class="лево-цены">
+                <div class="число-цены">24</div>
+                <span class="длительность-под-числом" data-i18n="prices.card1.duration"></span>
+              </div>
+              <div class="детали-цены">
+                <span class="тип-цены" data-i18n-html="prices.card1.type"></span>
+                <span class="сумма-цены">4000 Kč</span>
+              </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="карточка-цены">
+              <div class="лево-цены">
+                <div class="число-цены">2</div>
+                <span class="длительность-под-числом" data-i18n="prices.card2.duration"></span>
+              </div>
+              <div class="детали-цены">
+                <span class="тип-цены" data-i18n-html="prices.card2.type"></span>
+                <span class="сумма-цены">1500 Kč</span>
+              </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="карточка-цены">
+              <div class="лево-цены">
+                <div class="число-цены">8</div>
+                <span class="длительность-под-числом" data-i18n="prices.card3.duration"></span>
+              </div>
+              <div class="детали-цены">
+                <span class="тип-цены" data-i18n-html="prices.card3.type"></span>
+                <span class="сумма-цены">1600 Kč</span>
+              </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="карточка-цены маленькая">
+              <div class="лево-цены">
+                <div class="число-цены">1</div>
+              </div>
+              <div class="детали-цены">
+                <span class="тип-цены" data-i18n-html="prices.card4.type"></span>
+                <span class="сумма-цены">200 Kč</span>
+              </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="карточка-цены маленькая">
+              <div class="лево-цены">
+                <div class="число-цены">1</div>
+              </div>
+              <div class="детали-цены">
+                <span class="тип-цены" data-i18n-html="prices.card5.type"></span>
+                <span class="сумма-цены">500 Kč</span>
+              </div>
+            </div>
+
+            <!-- 6 -->
+            <a class="ссылка-больше" href="prices.html" data-i18n-html="prices.more_link"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELEGRAM -->
+ <div data-include="partials/telegram.html"></div>
+
+  <!-- VIBE -->
+  <section class="секция-атмосфера">
+    <div class="контейнер">
+      <div class="заголовок-секции">
+        <span class="линия-секции"></span>
+        <h2 class="название-секции" data-i18n="vibe.h2"></h2>
+      </div>
+
+      <div class="содержимое-атмосферы">
+        <!-- REVIEW -->
+        <div class="карточка карточка-отзыва">
+          <div class="карточка-внутри">
+            <div class="текст-отзыва">
+              <p data-i18n="vibe.review.text"></p>
+              <div class="автор-отзыва">Крис</div>
+            </div>
+
+            <a class="кнопка кнопка-ссылка" href="reviews.html" data-i18n-html="vibe.reviews_link"></a>
+          </div>
+        </div>
+
+        <!-- PHOTO -->
+        <div class="карточка карточка-фото">
+          <a class="ссылка-медиа" href="portfolio.html" data-i18n-html="vibe.photos_link"></a>
+          <div class="медиа-контент">
+            <img src="images/group_main.jpg" alt="Фото танцев" />
+          </div>
+        </div>
+
+        <!-- VIDEO -->
+        <div class="карточка карточка-видео">
+          <div class="медиа-контент видео">
+            <img src="images/video.jpg" alt="Видео танцев" />
+            <div class="кнопка-воспроизведения"><i class="fas fa-play"></i></div>
+          </div>
+
+          <a class="кнопка кнопка-ссылка" href="portfolio.html" data-i18n-html="vibe.videos_link"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ PREVIEW -->
+  <section class="секция-вопросы">
+    <div class="контейнер">
+      <div class="заголовок-секции">
+        <span class="линия-секции"></span>
+        <h2 class="название-секции" data-i18n="faq.h2"></h2>
+      </div>
+
+      <div class="список-вопросов">
+        <div class="элемент-вопроса">
+          <div class="вопрос">
+            <span class="иконка-вопроса">?</span>
+            <span data-i18n="faq.q1"></span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="ответ">
+            <p data-i18n="faq.a1"></p>
+          </div>
+        </div>
+
+        <div class="элемент-вопроса">
+          <div class="вопрос">
+            <span class="иконка-вопроса">?</span>
+            <span data-i18n="faq.q2"></span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="ответ">
+            <p data-i18n="faq.a2"></p>
+          </div>
+        </div>
+
+        <div class="элемент-вопроса">
+          <div class="вопрос">
+            <span class="иконка-вопроса">?</span>
+            <span data-i18n="faq.q3"></span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="ответ">
+            <p data-i18n="faq.a3"></p>
+          </div>
+        </div>
+      </div>
+
+      <a class="ссылка-больше" href="faq.html" data-i18n-html="faq.more_link"></a>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACTS -->
+<div data-include="partials/footer.html"></div>
+
+</body>
+</html>

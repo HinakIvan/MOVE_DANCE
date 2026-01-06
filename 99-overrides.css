@@ -1,0 +1,57 @@
+/* =========================================================
+   99-overrides.css — FIX mobile clicks (directions buttons + burger links)
+   Depends on JS: body.menu-open + .mobile-menu-overlay
+   ========================================================= */
+
+/* Overlay: when menu is CLOSED — must not block taps */
+.mobile-menu-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 10, 28, 0.35);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity .2s ease, visibility .2s ease;
+  z-index: 1099;
+}
+
+/* Overlay: when menu is OPEN — blocks taps to page (expected) */
+body.menu-open .mobile-menu-overlay{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Mobile stacking order: menu + burger above overlay */
+@media (max-width: 820px){
+  .меню-навигации{
+    pointer-events: auto !important;
+    z-index: 1101 !important;
+  }
+
+  .кнопка-мобильного-меню{
+    z-index: 1102 !important;
+  }
+
+  /* Safety: top directions nav above any decorative layers */
+  .секция-навигация-направлений{ position: relative; z-index: 2; }
+  .кнопки-направлений{ position: relative; z-index: 3; }
+  .кнопка-направления{ position: relative; z-index: 4; }
+}
+
+
+/* чтобы якорь не прятался под фиксированную шапку */
+.секция-направление{
+  scroll-margin-top: calc(var(--высота-шапки) + 12px);
+}
+
+
+@media (max-width: 820px){
+  main.directions-list{
+    height: calc(100dvh - var(--высота-шапки));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

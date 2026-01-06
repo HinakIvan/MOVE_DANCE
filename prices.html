@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n-title="page.prices.title">MOVE DANCE</title>
+  <meta name="description" data-i18n-meta="description" content="" data-i18n-meta-key="page.prices.desc">
+  <!-- <link rel="stylesheet" href="index.css"> -->
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="prices.css">
+  <link rel="stylesheet" href="99-overrides.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="i18n.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <div data-include="partials/header.html"></div>
+
+<main>
+  <!-- PRICES -->
+  <section class="секция-цены">
+    <div class="контейнер">
+      <div class="заголовок-секции">
+        <span class="линия-секции"></span>
+        <h1 class="название-секции" data-i18n="section.prices">АБОНЕМЕНТЫ</h1>
+      </div>
+
+      <!-- TOP: 4 cards across -->
+      <div class="сетка-цен цены-4" style="margin-top: 34px;">
+        <div class="карточка-цены">
+          <div class="лево-цены">
+            <div class="число-цены">1</div>
+          </div>
+          <div class="детали-цены">
+            <span class="тип-цены" data-i18n-html="prices.top.trial">пробное<br>занятие</span>
+            <span class="сумма-цены">200 Kč</span>
+          </div>
+        </div>
+
+        <div class="карточка-цены">
+          <div class="лево-цены">
+            <div class="число-цены">1</div>
+          </div>
+          <div class="детали-цены">
+            <span class="тип-цены" data-i18n-html="prices.top.single">разовое<br>занятие</span>
+            <span class="сумма-цены">300 Kč</span>
+          </div>
+        </div>
+
+        <div class="карточка-цены">
+          <div class="лево-цены">
+            <div class="число-цены">1</div>
+          </div>
+          <div class="детали-цены">
+            <span class="тип-цены" data-i18n-html="prices.top.private">индивидуальное<br>занятие</span>
+            <span class="сумма-цены">600 Kč</span>
+          </div>
+        </div>
+
+        <div class="карточка-цены">
+          <div class="лево-цены">
+            <div class="число-цены">1</div>
+          </div>
+          <div class="детали-цены">
+            <span class="тип-цены" data-i18n-html="prices.top.rent">аренда<br>зала</span>
+            <span class="сумма-цены">500 Kč</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adults & kids -->
+      <div class="подзаголовок-блока" data-i18n="prices.sub.adults_kids">ВЗРОСЛЫЕ И ДЕТСКИЕ ГРУППЫ</div>
+      <div class="сетка-цен цены-4">
+        <div class="карточка-цены">
+          <div class="лево-цены">
+            <div class="число-цены">4</div>
+            <span class="длительность-под-числом" data-i18n="prices.duration.1m">1 месяц</span>
+          </div>
+          <div class="детали-цены">
+            <span class="тип-цены" data-i18n-html="prices.type.group">групповых<br>занятий</span>
+            <span class="сумма-цены">1000 Kč</span>
+          </div>
+        </div>
+
+        <div class="карточка-цены">
+          <div class="лево-цены">
+            <div class="число-цены">8</div>
+            <span class="длительность-под-числом" data-i18n="prices.duration.1m">1 месяц</span>
+          </div>
+          <div class="детали-цены">
+            <span class="тип-цены" data-i18n-html="prices.type.group">групповых<br>занятий</span>
+            <span class="сумма-цены">1600 Kč</span>
+          </div>
+        </div>
+
+        <div class="карточка-цены">
+          <div class="лево-цены">
+            <div class="число-цены">16</div>
+            <span class="длительность-под-числом" data-i18n="prices.duration.2m">2 месяца</span>
+          </div>
+          <div class="детали-цены">
+            <span class="тип-цены" data-i18n-html="prices.type.group">групповых<br>занятий</span>
+            <span class="сумма-цены">2800 Kč</span>
+          </div>
+        </div>
+
+        <div class="карточка-цены">
+          <div class="лево-цены">
+            <div class="число-цены">24</div>
+            <span class="длительность-под-числом" data-i18n="prices.duration.3m">3 месяца</span>
+          </div>
+          <div class="детали-цены">
+            <span class="тип-цены" data-i18n-html="prices.type.group">групповых<br>занятий</span>
+            <span class="сумма-цены">4000 Kč</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini-group -->
+      <div class="подзаголовок-блока" data-i18n="prices.sub.minigroup">МИНИ-ГРУППА (2–3 ЧЕЛОВЕКА)</div>
+      <div class="сетка-цен цены-4">
+        <div class="карточка-цены">
+          <div class="лево-цены">
+            <div class="число-цены">1</div>
+            <!-- <span class="длительность-под-числом" data-i18n="prices.duration.2m">2 месяца</span> -->
+          </div>
+          <div class="детали-цены">
+            <span class="тип-цены" data-i18n-html="prices.type.minigroup">занятия<br>мини-группы</span>
+            <span class="сумма-цены">800 Kč</span>
+          </div>
+        </div>
+
+        <div class="карточка-цены">
+          <div class="лево-цены">
+            <div class="число-цены">2</div>
+            <!-- <span class="длительность-под-числом" data-i18n="prices.duration.2m">2 месяца</span> -->
+          </div>
+          <div class="детали-цены">
+            <span class="тип-цены" data-i18n-html="prices.type.minigroup">занятия<br>мини-группы</span>
+            <span class="сумма-цены">1500 Kč</span>
+          </div>
+        </div>
+
+        <div class="карточка-цены">
+          <div class="лево-цены">
+            <div class="число-цены">4</div>
+            <!-- <span class="длительность-под-числом" data-i18n="prices.duration.2m">2 месяца</span> -->
+          </div>
+          <div class="детали-цены">
+            <span class="тип-цены" data-i18n-html="prices.type.minigroup">занятия<br>мини-группы</span>
+            <span class="сумма-цены">3000 Kč</span>
+          </div>
+        </div>
+
+        <div class="карточка-цены">
+          <div class="лево-цены">
+            <div class="число-цены">8</div>
+            <!-- <span class="длительность-под-числом" data-i18n="prices.duration.2m">2 месяца</span> -->
+          </div>
+          <div class="детали-цены">
+            <span class="тип-цены" data-i18n-html="prices.type.minigroup">занятия<br>мини-группы</span>
+            <span class="сумма-цены">5800 Kč</span>
+          </div>
+        </div>
+      </div>
+
+      <a class="ссылка-больше" href="certificate.html">
+        <span data-i18n="prices.certificate_cta">ТАКЖЕ ВЫ МОЖЕТЕ ПРИОБРЕСТИ ПОДАРОЧНЫЙ СЕРТИФИКАТ</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- TELEGRAM -->
+  <div data-include="partials/telegram.html"></div>
+
+  <!-- RULES (full, with photo) -->
+  <section class="секция-правила" id="rules" style="padding-top: 0;">
+    <div class="контейнер">
+      <div class="заголовок-секции" style="margin-top: 10px;">
+        <span class="линия-секции"></span>
+        <h2 class="название-секции" data-i18n="rules.title">ПРАВИЛА ПОСЕЩЕНИЯ И АБОНЕМЕНТОВ</h2>
+      </div>
+
+      <div class="правила-сетка">
+        <div class="правила-колонка">
+          <div class="правило-карточка">
+            <div class="правило-заголовок">
+              <span class="правило-номер">1.</span>
+              <span class="правило-тема" data-i18n="rules.s1.title">ОБЩИЕ ПОЛОЖЕНИЯ</span>
+            </div>
+            <ul class="правило-список">
+              <li data-i18n="rules.s1.li1">Занятия проходят в танцевальных залах студии танцев Move.</li>
+              <li data-i18n="rules.s1.li2">Работа танцевальных залов: ежедневно — в соответствии с расписанием.</li>
+              <li data-i18n="rules.s1.li3">Студия Move оставляет за собой право изменять часы работы по мере необходимости.</li>
+              <li data-i18n="rules.s1.li4">Студия Move оставляет за собой право изменять расписание.</li>
+              <li data-i18n="rules.s1.li5">Студия Move оставляет за собой право самостоятельно осуществлять замены педагогов, заранее предупредив клиентов.</li>
+              <li data-i18n="rules.s1.li6">Во время проведения занятий студия Move руководствуется тем, что посетитель не имеет противопоказаний для занятий физической культурой.</li>
+              <li data-i18n="rules.s1.li7">При нарушении Правил посещения студии Move администрация оставляет за собой право аннулировать абонемент без возврата денег.</li>
+              <li data-i18n="rules.s1.li8">Абонемент оформляется персонально на вас и не может быть передан или использован другими лицами.</li>
+              <li data-i18n="rules.s1.li9">Студия Move не несет ответственности за сохранность вещей и ценностей, предоставляя возможность брать ценные вещи с собой в танцевальный зал.</li>
+            </ul>
+          </div>
+
+          <div class="правило-карточка">
+            <div class="правило-заголовок">
+              <span class="правило-номер">2.</span>
+              <span class="правило-тема" data-i18n="rules.s2.title">АБОНЕМЕНТ И ПРАВИЛА ЕГО ИСПОЛЬЗОВАНИЯ</span>
+            </div>
+            <ul class="правило-список">
+              <li data-i18n="rules.s2.li1">Студия Move предоставляет возможность оплаты разовых занятий и приобретения абонемента, который записывается в системе на определенного человека без права передачи и действует на срок, указанный в прайс-листе.</li>
+              <li data-i18n="rules.s2.li2">Один абонемент включает все направления студии Move, за исключением «закрытых групп», оплата которых происходит по отдельному прайс-листу.</li>
+              <li data-i18n="rules.s2.li3">Если занятие отменяется студией — с абонемента не списывается занятие, бронь переносится на следующее.</li>
+            </ul>
+          </div>
+
+          <div class="правило-карточка">
+            <div class="правило-заголовок">
+              <span class="правило-номер">3.</span>
+              <span class="правило-тема" data-i18n="rules.s3.title">ОБЯЗАННОСТИ ПОСЕТИТЕЛЕЙ</span>
+            </div>
+            <ul class="правило-список">
+              <li data-i18n="rules.s3.li1">Соблюдать чистоту на территории и в залах танцевальной студии Move.</li>
+              <li data-i18n="rules.s3.li2">Соблюдать правила общественного порядка.</li>
+              <li data-i18n="rules.s3.li3">Посещать занятия в специальной сменной одежде и обуви.</li>
+              <li data-i18n="rules.s3.li4">Соблюдать правила общей гигиены. В раздевалках есть душевые комнаты, которыми посетители могут пользоваться.</li>
+            </ul>
+          </div>
+
+          <div class="правило-карточка">
+            <div class="правило-заголовок">
+              <span class="правило-номер">4.</span>
+              <span class="правило-тема" data-i18n="rules.s4.title">ОТВЕТСТВЕННОСТЬ ПОСЕТИТЕЛЕЙ</span>
+            </div>
+            <ul class="правило-список">
+              <li data-i18n="rules.s4.li1">Посетитель несет материальную ответственность за ущерб, причиненный имуществу студии Move.</li>
+              <li data-i18n="rules.s4.li2">В случае причинения ущерба по вине посетителя — виновный обязан возместить стоимость поврежденного и/или утраченного имущества. Виновную сторону определяет администрация студии.</li>
+            </ul>
+          </div>
+
+          <div class="правило-карточка">
+            <div class="правило-заголовок">
+              <span class="правило-номер">5.</span>
+              <span class="правило-тема" data-i18n="rules.s5.title">ОГРАНИЧЕНИЯ ОТВЕТСТВЕННОСТИ MOVE</span>
+            </div>
+            <ul class="правило-список">
+              <li data-i18n="rules.s5.li1">Студия Move не несет ответственности за вред вашему здоровью и/или имуществу, причиненный действиями третьих лиц.</li>
+              <li data-i18n="rules.s5.li2">Все риски причинения вреда здоровью в процессе посещения занятий посетитель принимает на себя.</li>
+            </ul>
+          </div>
+
+          <div class="правила-итог" data-i18n="rules.note">
+            !!! ПРИОБРЕТЕНИЕ АБОНЕМЕНТА В ТАНЦЕВАЛЬНОЙ СТУДИИ MOVE ЯВЛЯЕТСЯ ПОДТВЕРЖДЕНИЕМ ТОГО, ЧТО ВЫ ОЗНАКОМЛЕНЫ И СОГЛАСНЫ С ДАННЫМИ ПРАВИЛАМИ.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACTS -->
+  <div data-include="partials/footer.html"></div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n-title="page.schedule.title">MOVE DANCE</title>
+  <meta name="description" data-i18n-meta="description" content="" data-i18n-meta-key="page.schedule.desc">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="schedule.css">
+  <link rel="stylesheet" href="99-overrides.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="i18n.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <div data-include="partials/header.html"></div>
+
+  <div class="розовая-зона">
+  <!-- Секция расписания -->
+  <section class="секция-расписание">
+    <div class="контейнер">
+      <div class="заголовок-секции">
+        <span class="линия-секции"></span>
+        <h2 class="название-секции" data-i18n="schedule.h2">РАСПИСАНИЕ ЗАНЯТИЙ</h2>
+      </div>
+
+      <div class="фильтр-расписания">
+        <button class="кнопка-фильтра" data-i18n-aria="schedule.filter_aria" aria-label="Фильтр">
+          <i class="fas fa-sliders-h"></i>
+        </button>
+      </div>
+
+      <div class="обертка-расписания">
+        <div class="заголовок-расписания">
+          <div class="колонка-дня">
+            <span class="название-дня" data-i18n="schedule.day.mon">Пн</span>
+          </div>
+          <div class="колонка-дня">
+            <span class="название-дня" data-i18n="schedule.day.tue">Вт</span>
+          </div>
+          <div class="колонка-дня">
+            <span class="название-дня" data-i18n="schedule.day.wed">Ср</span>
+          </div>
+          <div class="колонка-дня">
+            <span class="название-дня" data-i18n="schedule.day.thu">Чт</span>
+          </div>
+          <div class="колонка-дня">
+            <span class="название-дня" data-i18n="schedule.day.fri">Пт</span>
+          </div>
+          <div class="колонка-дня">
+            <span class="название-дня" data-i18n="schedule.day.sat">Сб</span>
+          </div>
+          <div class="колонка-дня">
+            <span class="название-дня" data-i18n="schedule.day.sun">Вс</span>
+          </div>
+        </div>
+
+            <div class="сетка-расписания">
+
+            <!-- Row 1 -->
+            <div class="ряд-расписания">
+                <!-- Mon -->
+                <div class="временной-слот пустой"></div>
+
+                <!-- Tue -->
+                <div class="временной-слот активный">
+                <span class="время">17:00</span>
+                <span class="название-занятия">Choreo</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+
+                <!-- Wed -->
+                <div class="временной-слот активный">
+                <span class="время">16:00</span>
+                <span class="название-занятия">Kids</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+
+                <!-- Thu -->
+                <div class="временной-слот пустой"></div>
+
+                <!-- Fri -->
+                <div class="временной-слот активный">
+                <span class="время">16:00</span>
+                <span class="название-занятия">Kids</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+
+                <!-- Sat -->
+                <div class="временной-слот активный">
+                <span class="время">13:00</span>
+                <span class="название-занятия">Frame Up</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+
+                <!-- Sun -->
+                 <div class="временной-слот пустой"></div>
+                
+            </div>
+
+            <!-- Row 2 -->
+            <div class="ряд-расписания">
+                <!-- Mon -->
+                <div class="временной-слот пустой"></div>
+
+                <!-- Tue -->
+                <div class="временной-слот пустой"></div>
+
+                <!-- Wed -->
+                <div class="временной-слот пустой"></div>
+
+                <!-- Thu -->
+                <div class="временной-слот пустой"></div>
+
+                <!-- Fri -->
+                <div class="временной-слот активный">
+                <span class="время">17:30</span>
+                <span class="название-занятия">Contemporary</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+
+                <!-- Sat -->
+                <div class="временной-слот активный">
+                <span class="время">16:30</span>
+                <span class="название-занятия">Jazz Funk</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+
+                <!-- Sun -->
+                <div class="временной-слот пустой"></div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="ряд-расписания">
+                <!-- Mon -->
+                <div class="временной-слот активный">
+                <span class="время">19:00</span>
+                <span class="название-занятия">Frame Up</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+                
+
+                <!-- Tue -->
+                <div class="временной-слот пустой"></div>
+
+                <!-- Wed -->
+                 <div class="временной-слот активный">
+                <span class="время">18:30</span>
+                <span class="название-занятия">Mobility & Stretching</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+                
+
+                <!-- Thu -->
+                 <div class="временной-слот активный">
+                <span class="время">19:00</span>
+                <span class="название-занятия">Frame Up</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+                
+
+                <!-- Fri -->
+                <div class="временной-слот активный">
+                <span class="время">18:30</span>
+                <span class="название-занятия">Mobility & Stretching</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+
+                <!-- Sat -->
+                <div class="временной-слот пустой"></div>
+
+                <!-- Sun -->
+                <div class="временной-слот пустой"></div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="ряд-расписания">
+                <!-- Mon -->
+                <div class="временной-слот активный">
+                <span class="время">20:00</span>
+                <span class="название-занятия">High Heels</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+                
+
+                <!-- Tue -->
+                <div class="временной-слот активный">
+                <span class="время">20:00</span>
+                <span class="название-занятия">Frame Up</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+
+                <!-- Wed -->
+                <div class="временной-слот активный">
+                <span class="время">19:30</span>
+                <span class="название-занятия">Latina</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+
+                <!-- Thu -->
+                <div class="временной-слот активный">
+                <span class="время">20:00</span>
+                <span class="название-занятия">High Heels</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+
+                <!-- Fri -->
+                <div class="временной-слот активный">
+                <span class="время">19:30</span>
+                <span class="название-занятия">Frame Up</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+
+                <!-- Sat -->
+                <div class="временной-слот пустой"></div>
+
+                <!-- Sun -->
+                <div class="временной-слот активный">
+                <span class="время">19:30</span>
+                <span class="название-занятия">Latina</span>
+                <button class="кнопка-добавить" data-i18n-aria="schedule.add_aria" aria-label="Добавить">+</button>
+                </div>
+            </div>
+
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</div>
+  <!-- TELEGRAM -->
+  <div data-include="partials/telegram.html"></div>
+
+  <!-- FOOTER / CONTACTS -->
+  <div data-include="partials/footer.html"></div>
+
+  
+</body>
+</html>

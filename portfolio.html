@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title data-i18n-title="page.portfolio.title"></title>
+  <meta name="description" data-i18n-meta="description" content="" data-i18n-meta-key="page.portfolio.desc">
+
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="99-overrides.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="i18n.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <div data-include="partials/header.html"></div>
+
+  <main class="страница">
+    <section class="секция-страницы">
+      <div class="контейнер">
+
+        <!-- <div class="заголовок-секции">
+          <span class="линия-секции"></span>
+          <h1 class="название-секции" data-i18n="portfolio.h1"></h1>
+        </div> -->
+
+        <div class="portfolio-page">
+
+          <!-- ====== PHOTO ====== -->
+           <div class="portfolio-heading">
+              <span class="portfolio-line"></span>
+              <h2 class="portfolio-subhead" data-i18n="portfolio.photo_h2"></h2>
+            </div>
+
+              <div class="portfolio-carousel" data-carousel aria-label="" data-i18n-aria="portfolio.photo_carousel_aria">
+                <div class="portfolio-viewport">
+                  <div class="portfolio-track">
+
+                    <!-- ЛОГИКА #1: 1 / 1.1 / 1! / 1.3 / 2.1 -->
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/1.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/1.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/1.1.jpeg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/1.1.jpeg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item is-active">
+                      <a class="portfolio-media" href="images/1!.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/1!.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/1.3.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/1.3.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/2.1.jpg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/2.1.jpg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <!-- ДАЛЬШЕ: все остальные фото (без HEIC) -->
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/2.jpg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/2.jpg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/2.4.jpg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/2.4.jpg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/2.4.jpeg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/2.4.jpeg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/2.5.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/2.5.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/3.2.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/3.2.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/3.4.jpg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/3.4.jpg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/4.1.jpeg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/4.1.jpeg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/4.2.jpg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/4.2.jpg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/4.8.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/4.8.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/5.jpeg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/5.jpeg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/5.1.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/5.1.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <!-- <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/5.6.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/5.6.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div> -->
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/6.jpg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/6.jpg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/6.1.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/6.1.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/6.2.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/6.2.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/6.5.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/6.5.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/7.2.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/7.2.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/7.3.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/7.3.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/7.4.jpeg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/7.4.jpeg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/8.2.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/8.2.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/8.3.jpeg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/8.3.jpeg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/8.5.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/8.5.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/9.jpeg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/9.jpeg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/9.2.jpg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/9.2.jpg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/10.jpg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/10.jpg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/10.3.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/10.3.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/11.jpg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/11.jpg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/12.1.jpeg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/12.1.jpeg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/12.2.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/12.2.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/12.3.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/12.3.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/13.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/13.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/13.3.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/13.3.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/14.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/14.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/14.2.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/14.2.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/14.3.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/14.3.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/14.4.jpeg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/14.4.jpeg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/17.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/17.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/17.1.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/17.1.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/18.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/18.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/18.2.jpeg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/18.2.jpeg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/18.5.jpeg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/18.5.jpeg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/19.jpg" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/19.jpg" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                    <div class="portfolio-item">
+                      <a class="portfolio-media" href="images/20.JPG" target="_blank" rel="noopener" aria-label="" data-i18n-aria="portfolio.open_photo_aria">
+                        <img src="images/20.JPG" data-i18n-alt="portfolio.photo_alt">
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- КНОПКИ + ТОЧКИ (обязательно для фото, иначе перелистывания не будет) -->
+                <div class="portfolio-controls">
+                  <button class="portfolio-nav portfolio-nav--prev" type="button" aria-label="" data-i18n-aria="a11y.prev">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                  </button>
+
+                  <div class="portfolio-dots" aria-label="" data-i18n-aria="portfolio.dots_aria"></div>
+
+                  <button class="portfolio-nav portfolio-nav--next" type="button" aria-label="" data-i18n-aria="a11y.next">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+
+
+          <!-- ====== VIDEO ====== -->
+         <div class="portfolio-heading portfolio-heading--spaced">
+            <span class="portfolio-line"></span>
+            <h2 class="portfolio-subhead" data-i18n="portfolio.video_h2"></h2>
+          </div>
+          <div class="portfolio-carousel" data-carousel aria-label="" data-i18n-aria="portfolio.video_carousel_aria">
+            <div class="portfolio-viewport">
+              <div class="portfolio-track">
+
+                  <!-- 1 -->
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/1kids (kiids).mp4"
+                            data-poster="images/kiids.JPG">
+                      <img src="images/kiids.JPG" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <!-- 2 -->
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/2acro (2.5).mp4"
+                            data-poster="images/2.5.JPG">
+                      <img src="images/2.5.JPG" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/2comtmp_group (comp_group).mp4"
+                            data-poster="images/comp_group.JPG">
+                      <img src="images/comp_group.jpeg" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <!-- 3 -->
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/3chumak (chumak_main.JPG).mp4"
+                            data-poster="images/chumak_main.JPG">
+                      <img src="images/chumak_main.JPG" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/3stret (5.1).mp4"
+                            data-poster="images/5.1.JPG">
+                      <img src="images/5.1.JPG" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <!-- 4 -->
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/4event (7.3).mp4"
+                            data-poster="images/7.3.JPG">
+                      <img src="images/7.3.JPG" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/4frame (4.8).mp4"
+                            data-poster="images/4.8.JPG">
+                      <img src="images/4.8.JPG" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <!-- 5 -->
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/5frame_love (90).mp4"
+                            data-poster="images/90.JPG">
+                      <img src="images/90.JPG" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <!-- 6 -->
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/6love cont(love_main).mp4"
+                            data-poster="images/love_main.JPG">
+                      <img src="images/love_main.JPG" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/6merch (17).mp4"
+                            data-poster="images/17.JPG">
+                      <img src="images/17.JPG" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <!-- 7 -->
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/7heels (heels_v).mp4"
+                            data-poster="images/heels.JPG">
+                      <img src="images/hells_v.jpg" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/7we (faq).mp4"
+                            data-poster="images/faq.jpg">
+                      <img src="images/faq.JPG" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <!-- 8 -->
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/8frame_love2 (5.6).MP4"
+                            data-poster="images/5.6.JPG">
+                      <img src="images/5.6.JPG" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+                  <div class="portfolio-item">
+                    <button class="portfolio-media portfolio-media--video js-video"
+                            type="button"
+                            data-video="video/8frame_love3 (frame).MP4"
+                            data-poster="images/frame.JPG">
+                      <img src="images/frame.JPG" alt="">
+                      <span class="portfolio-play" aria-hidden="true"></span>
+                    </button>
+                  </div>
+
+
+
+
+              </div>
+            </div>
+
+            <div class="portfolio-controls">
+              <button class="portfolio-nav portfolio-nav--prev" type="button" aria-label="" data-i18n-aria="a11y.prev">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+              </button>
+
+              <div class="portfolio-dots" aria-label="" data-i18n-aria="portfolio.dots_aria"></div>
+
+              <button class="portfolio-nav portfolio-nav--next" type="button" aria-label="" data-i18n-aria="a11y.next">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- INSTAGRAM -->
+  <div data-include="partials/instagram.html"></div>
+
+  <!-- FOOTER / CONTACTS -->
+  <div data-include="partials/footer.html"></div>
+
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+  <div class="video-modal__backdrop" data-video-close></div>
+  <div class="video-modal__dialog" role="dialog" aria-modal="true">
+    <button class="video-modal__close" type="button" data-video-close aria-label="Close">×</button>
+    <div class="video-modal__frame" id="videoModalFrame"></div>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,507 @@
+/* =========================================================
+   faq.css — ONLY faq.html
+   Includes: tokens + base + layout + FAQ + contact + popups
+   Excludes: header / footer / instagram / telegram sections
+   ========================================================= */
+
+/* =========================
+   1) Design tokens
+   ========================= */
+:root{
+  --основной-цвет: #9B7BB8;
+  --основной-светлый: #D4A5C9;
+  --основной-темный: #7A5A9A;
+
+  --текст-темный: #4B296B;
+  --текст-светлый: #7C5A96;
+
+  --белый: #FFFFFF;
+  --фон-светлый: #FDF8FB;
+
+  --переход: 200ms ease;
+}
+
+/* =========================
+   2) Base reset + globals
+   ========================= */
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--текст-темный);
+  background: var(--белый);
+  overflow-x: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  transition: var(--переход);
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.контейнер{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* faq.html uses: <main class="страница"> */
+.страница{ padding-top: 26px; }
+
+/* =========================
+   3) Buttons (FAQ page only)
+   IMPORTANT: Scoped to avoid breaking footer gradients
+   ========================= */
+.faq-page .кнопка,
+.contact-form .кнопка{
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--переход);
+  border: none;
+  text-align: center;
+  background: transparent;
+}
+
+.faq-page .кнопка-контурная,
+.contact-form .кнопка-контурная{
+  background: transparent;
+  color: var(--основной-цвет);
+  border: 2px solid var(--основной-цвет);
+}
+
+.faq-page .кнопка-контурная:hover,
+.contact-form .кнопка-контурная:hover{
+  background: var(--основной-цвет);
+  color: var(--белый);
+}
+
+/* =========================
+   4) Section heading
+   ========================= */
+.заголовок-секции{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 10px;
+}
+
+.линия-секции{
+  width: 40px;
+  height: 2px;
+  background: var(--основной-цвет);
+  flex-shrink: 0;
+}
+
+.название-секции{
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--основной-цвет);
+}
+
+/* =========================
+   5) FAQ page layout
+   ========================= */
+.секция-страницы{
+  background: var(--фон-светлый);
+  padding: 30px 0;
+}
+
+/* if header is fixed — push title down */
+.секция-страницы .заголовок-секции{
+  margin-top: 60px;
+}
+
+.faq-page{ margin-top: 18px; }
+.faq-list{ margin-top: 18px; }
+
+/* =========================
+   6) FAQ accordion
+   ========================= */
+.faq-page .элемент-вопроса{
+  background: #fff;
+  border: 1px solid rgba(155, 123, 184, 0.28);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-page .элемент-вопроса .вопрос{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 52px 18px 20px; /* space for arrow */
+  cursor: pointer;
+}
+
+/* compact "?" */
+.faq-page .элемент-вопроса .вопрос .faq-icon{
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(155, 123, 184, 0.55);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--основной-цвет);
+  margin-right: 8px;
+}
+
+.faq-page .элемент-вопроса .вопрос .faq-question{
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--текст-темный);
+}
+
+/* arrow (rotate wrapper, reliable for Font Awesome) */
+.faq-page .элемент-вопроса .вопрос .faq-arrow{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(155, 123, 184, 0.85);
+  font-size: 14px;
+
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform var(--переход);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.faq-page .элемент-вопроса.активный .вопрос .faq-arrow{
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* keep icon clean (avoid double transforms from other css) */
+.faq-page .элемент-вопроса .вопрос .faq-arrow i{
+  display: block;
+  transform: none !important;
+}
+
+/* answer */
+.faq-page .ответ{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 280ms ease;
+}
+
+.faq-page .элемент-вопроса.активный .ответ{
+  max-height: 320px;
+}
+
+.faq-page .ответ p{
+  padding: 0 20px 18px 62px;
+  font-size: 13px;
+  color: var(--текст-светлый);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =========================
+   7) Rules link
+   ========================= */
+.faq-rules-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--основной-цвет);
+}
+
+.faq-rules-link:hover{ color: var(--основной-темный); }
+
+.faq-link-arrow{
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* =========================
+   8) Contact (form + photo)
+   ========================= */
+.faq-contact-title{ margin-top: 46px; }
+
+.contact-split{
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 34px;
+  margin-top: 22px;
+  align-items: start;
+}
+
+.contact-form{
+  background: linear-gradient(
+    180deg,
+    rgba(155, 123, 184, 0.14) 0%,
+    rgba(212, 165, 201, 0.10) 100%
+  );
+  border: 1px solid rgba(155, 123, 184, 0.35);
+  border-radius: 18px;
+  padding: 24px 22px;
+}
+
+.contact-form h3{
+  margin: 0 0 16px;
+  font-size: 14px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--основной-цвет);
+}
+
+.contact-form .form-row{ margin-bottom: 14px; }
+
+.contact-form label{
+  display: block;
+  font-size: 12px;
+  color: var(--текст-светлый);
+  margin: 0 0 6px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width: 100%;
+  border: 1px solid rgba(155, 123, 184, 0.35);
+  border-radius: 10px;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  background: #fff;
+  outline: none;
+}
+
+.contact-form textarea{
+  min-height: 110px;
+  resize: vertical;
+}
+
+.contact-form .кнопка{
+  width: 100%;
+  margin-top: 6px;
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+/* contact other + social icons */
+.contact-other{ margin-top: 16px; }
+
+.contact-other p{
+  margin: 0 0 10px;
+  color: var(--текст-светлый);
+  font-size: 14px;
+}
+
+.иконки-соцсетей{
+  display: flex;
+  gap: 17px;
+}
+
+.иконки-соцсетей a{
+  font-size: 22px;
+  color: var(--основной-цвет);
+  transition: var(--переход);
+}
+
+.иконки-соцсетей a:hover{
+  color: var(--основной-темный);
+  transform: scale(1.15);
+}
+
+/* Photo */
+.contact-photo{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(155, 123, 184, 0.25);
+  background: #fff;
+}
+
+.contact-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1.25 / 1;
+}
+
+/* =========================
+   9) Responsive
+   ========================= */
+@media (max-width: 900px){
+  /* remove photo in adaptive */
+  .contact-photo{ display: none !important; }
+
+  .contact-split{ grid-template-columns: 1fr !important; }
+
+  .faq-contact-title{ margin-top: 32px; }
+}
+
+@media (max-width: 820px){
+  /* safer accordion on long answers */
+  .faq-page .элемент-вопроса{ overflow: hidden; }
+
+  .faq-page .элемент-вопроса .ответ{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height .3s ease, opacity .2s ease;
+  }
+
+  .faq-page .элемент-вопроса.активный .ответ{
+    max-height: 1200px;
+    opacity: 1;
+  }
+
+  .faq-page .ответ *{
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+/* =========================
+   10) Popups (FormSubmit AJAX)
+   ========================= */
+.popup-overlay{
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(0,0,0,.16);
+  z-index: 9999;
+}
+
+.popup-overlay.is-open{ display: flex; }
+
+.popup-card{
+  width: min(600px, 92vw);
+  background: #fbf7fb;
+  border: 2px solid #6b3f83;
+  border-radius: 10px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.16);
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-close{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b3f83;
+  opacity: .9;
+}
+
+.popup-content{
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 18px;
+}
+
+.popup-title{
+  margin: 0 0 10px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: #3b214a;
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.popup-text{
+  margin: 0;
+  color: #3b214a;
+  opacity: .85;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.popup-right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.popup-logo{
+  width: 160px;
+  max-width: 200%;
+  height: auto;
+  display: block;
+  transform: translateY(2px);
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,.14));
+}
+
+@media (max-width: 640px){
+  .popup-card{ width: min(520px, 92vw); }
+
+  .popup-content{
+    grid-template-columns: 1fr;
+    padding: 16px 16px 18px;
+  }
+
+  .popup-right{
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+
+  .popup-logo{ width: 150px; }
+}
+
+
+/* =========================================================
+   FAQ — arrow rotate (FINAL override)
+   Must be at the VERY END of 99-overrides.css
+   ========================================================= */
+
+.faq-page .элемент-вопроса .вопрос .faq-arrow{
+  transform: translateY(-50%) rotate(0deg) !important;
+  transition: transform 200ms ease !important;
+  transform-origin: center !important;
+  will-change: transform;
+}
+
+.faq-page .элемент-вопроса.активный .вопрос .faq-arrow{
+  transform: translateY(-50%) rotate(180deg) !important;
+}
+
+.faq-page .элемент-вопроса .вопрос .faq-arrow i{
+  display: block;
+  transform: none !important;
+}

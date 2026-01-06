@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title data-i18n-title="page.certificate.title"></title>
+  <meta name="description" data-i18n-meta="description" data-i18n-meta-key="page.certificate.desc">
+
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="certificate.css">
+  <link rel="stylesheet" href="99-overrides.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="i18n.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <div data-include="partials/header.html"></div>
+
+  <main class="страница">
+    <section class="секция-страницы">
+      <div class="контейнер">
+
+        <div class="заголовок-секции">
+          <span class="линия-секции"></span>
+          <h1 data-i18n="cert.title"></h1>
+        </div>
+
+        <div class="certificate-page">
+
+          <!-- HERO -->
+          <div class="cert-hero">
+            <div class="cert-text">
+
+              <div class="cert-text-badge" aria-hidden="true" data-i18n="cert.badge"></div>
+
+              <p data-i18n="cert.hero1"></p>
+              <p data-i18n="cert.hero2"></p>
+              <p data-i18n="cert.hero3"></p>
+
+              <p>
+                <strong data-i18n="cert.hero4"></strong>
+                <span data-i18n="cert.hero5"></span>
+              </p>
+            </div>
+
+            <div class="cert-banner">
+              <img src="images/certificate.jpg" data-i18n-alt="cert.banner_alt" alt="">
+            </div>
+          </div>
+
+          <!-- FORM -->
+          <div class="cert-form">
+            <h3 class="subhead" data-i18n="cert.form_title"></h3>
+
+            <form action="https://formsubmit.co/move.dance.europe@gmail.com" method="POST" class="cert-form-grid js-formsubmit">
+              <input type="hidden" name="_subject" value="MOVE DANCE — Gift certificate order">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="">
+
+              <input type="hidden" name="lang" value="">
+
+              <div class="grid-2">
+                <div class="form-row">
+                  <label data-i18n="cert.l1"></label>
+                  <input name="name" type="text" required data-i18n-placeholder="cert.ph_name">
+                </div>
+
+                <div class="form-row">
+                  <label data-i18n="cert.l2"></label>
+                  <input name="contact" type="text" required data-i18n-placeholder="cert.ph_contact">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label data-i18n="cert.l3"></label>
+                <textarea name="message" rows="4" data-i18n-placeholder="cert.ph_message"></textarea>
+              </div>
+
+              <div class="form-row">
+                <label data-i18n="cert.l4"></label>
+                <div class="radio-row">
+                  <label><input type="radio" name="sum" value="4000" required><span data-i18n="cert.sum.4000"></span></label>
+                  <label><input type="radio" name="sum" value="2800"><span data-i18n="cert.sum.2800"></span></label>
+                  <label><input type="radio" name="sum" value="1600"><span data-i18n="cert.sum.1600"></span></label>
+                  <label><input type="radio" name="sum" value="800"><span data-i18n="cert.sum.800"></span></label>
+                  <label><input type="radio" name="sum" value="500"><span data-i18n="cert.sum.500"></span></label>
+                </div>
+              </div>
+
+              <div class="grid-2">
+                <div class="form-row">
+                  <label data-i18n="cert.l5"></label>
+
+                  <label class="radio-line">
+                    <input type="radio" name="delivery" value="email" required>
+                    <span data-i18n="cert.delivery.email"></span>
+                  </label>
+
+                  <input name="delivery_email" type="text" data-i18n-placeholder="cert.ph_email">
+
+                  <label class="radio-line">
+                    <input type="radio" name="delivery" value="pickup">
+                    <span data-i18n="cert.delivery.pickup"></span>
+                  </label>
+                </div>
+
+                <div class="form-row">
+                  <label data-i18n="cert.l6"></label>
+
+                  <label class="radio-line">
+                    <input type="radio" name="pay" value="invoice" required>
+                    <span data-i18n="cert.pay.invoice"></span>
+                  </label>
+
+                  <input name="invoice_details" type="text" data-i18n-placeholder="cert.ph_invoice">
+
+                  <label class="radio-line">
+                    <input type="radio" name="pay" value="studio">
+                    <span data-i18n="cert.pay.studio"></span>
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="кнопка кнопка-контурная cert-submit" data-i18n="cert.btn"></button>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/instagram.html"></div>
+  <div data-include="partials/footer.html"></div>
+
+  <!-- POPUPS -->
+  <div class="popup-overlay" id="popupSuccess" aria-hidden="true">
+    <div class="popup-card" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-describedby="popupText">
+      <button class="popup-close" type="button" aria-label="Close" data-popup-close>×</button>
+
+      <div class="popup-content">
+        <div class="popup-left">
+          <h3 class="popup-title" id="popupTitle" data-i18n="popup.success.title">СПАСИБО ЗА ВАШЕ СООБЩЕНИЕ</h3>
+          <p class="popup-text" id="popupText" data-i18n="popup.success.text">В ближайшее время мы вам ответим</p>
+        </div>
+
+        <!-- <div class="popup-right" aria-hidden="true">
+          <img class="popup-logo" src="images/move.png" alt="">
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="popupError" aria-hidden="true">
+    <div class="popup-card" role="dialog" aria-modal="true" aria-labelledby="popupErrTitle" aria-describedby="popupErrText">
+      <button class="popup-close" type="button" aria-label="Close" data-popup-close>×</button>
+
+      <div class="popup-content">
+        <div class="popup-left">
+          <h3 class="popup-title" id="popupErrTitle" data-i18n="popup.error.title">ОШИБКА ОТПРАВКИ</h3>
+          <p class="popup-text" id="popupErrText" data-i18n="popup.error.text">Попробуйте ещё раз или напишите нам в Instagram/Telegram</p>
+        </div>
+
+        <!-- <div class="popup-right" aria-hidden="true">
+          <img class="popup-logo" src="images/move.png" alt="">
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+

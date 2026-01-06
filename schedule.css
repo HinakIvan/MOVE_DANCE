@@ -1,0 +1,331 @@
+/* ============================================
+   schedule.css — ONLY schedule.html
+   (без шапки / футера / Instagram / Telegram)
+   ============================================ */
+
+/* =========================
+   0) Design tokens (минимум, чтобы страница была автономной)
+   ========================= */
+:root{
+  --основной-цвет: #9B7BB8;
+  --основной-темный: #4B296B;
+
+  --фон-светлый: #FBF3FA;
+  --фон-градиент: linear-gradient(135deg, #9B7BB8 0%, #C79ACB 100%);
+
+  --текст-темный: #4B296B;
+  --текст-светлый: rgba(75, 41, 107, 0.70);
+  --белый: #ffffff;
+
+  --тень: 0 10px 30px rgba(155, 123, 184, 0.22);
+  --тень-при-наведении: 0 14px 40px rgba(155, 123, 184, 0.30);
+
+  --переход: 180ms ease;
+
+  --скругление: 20px;
+  --скругление-маленькое: 14px;
+
+  /* используется в styles.css как “основной-светлый” */
+  --основной-светлый: rgba(155, 123, 184, 0.30);
+}
+
+/* =========================
+   1) Base / reset (минимально нужное)
+   ========================= */
+*{ box-sizing: border-box; }
+
+html, body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--текст-темный);
+  background: var(--белый);
+}
+
+img{ max-width: 100%; display: block; }
+button{ font-family: inherit; }
+
+/* контейнер как на сайте */
+.контейнер{
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* =========================
+   2) Общие секционные заголовки (используются в schedule.html)
+   ========================= */
+.заголовок-секции{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 0 0 18px;
+}
+
+.линия-секции{
+  width: 40px;
+  height: 2px;
+  background: var(--основной-цвет);
+  flex-shrink: 0;
+}
+
+.название-секции{
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--основной-цвет);
+}
+
+/* =========================
+   3) Background wrappers из schedule.html
+   ========================= */
+.розовая-зона{
+  background: var(--фон-светлый);
+}
+
+/* =========================
+   4) Секция расписания
+   ========================= */
+.секция-расписание{
+  padding-top: 120px;
+  padding-bottom: 60px;
+  min-height: calc(100vh - 200px);
+
+  /* как в styles.css: мягкий градиент */
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    var(--фон-светлый) 100%
+  );
+}
+
+/* =========================
+   5) Filter button
+   ========================= */
+.фильтр-расписания{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.кнопка-фильтра{
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--белый);
+  border-radius: 10px;
+  color: var(--основной-цвет);
+  cursor: pointer;
+  box-shadow: var(--тень);
+  transition: var(--переход);
+}
+
+.кнопка-фильтра:hover{
+  background: var(--основной-цвет);
+  color: var(--белый);
+}
+
+/* =========================
+   6) Schedule table
+   ========================= */
+.обертка-расписания{
+  background: var(--белый);
+  border-radius: var(--скругление);
+  box-shadow: var(--тень);
+  overflow: hidden;
+}
+
+.заголовок-расписания{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--фон-светлый);
+  border-bottom: 2px solid var(--основной-светлый);
+}
+
+.колонка-дня{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 10px;
+  border-right: 1px solid var(--основной-светлый);
+}
+
+.колонка-дня:last-child{ border-right: none; }
+
+.название-дня{
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--основной-цвет);
+  margin-bottom: 5px;
+}
+
+/* В schedule.html дата не используется, но оставляю совместимость */
+.дата-дня{
+  font-size: 12px;
+  color: var(--текст-светлый);
+}
+
+/* если ты реально хочешь скрыть даты — оставляем */
+.дата-дня{ display: none !important; }
+
+.сетка-расписания{
+  padding: 10px;
+}
+
+.ряд-расписания{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.ряд-расписания:last-child{ margin-bottom: 0; }
+
+.временной-слот{
+  background: var(--белый);
+  border: 2px solid var(--основной-светлый);
+  border-radius: var(--скругление-маленькое);
+  text-align: center;
+  position: relative;
+  transition: var(--переход);
+
+  min-height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* важно */
+  align-items: center;
+
+  padding: 15px 10px;
+  padding-top: 14px;           /* ⬆ поднимаем контент */
+  padding-bottom: 10px;
+}
+
+.временной-слот.активный{
+  border-color: var(--основной-цвет);
+  background: var(--белый);
+}
+
+.временной-слот.активный:hover{
+  background: var(--фон-светлый);
+  transform: translateY(-2px);
+  box-shadow: var(--тень);
+}
+
+.временной-слот.неактивный{
+  border-color: #E8E8E8;
+  background: #FAFAFA;
+  opacity: 0.6;
+}
+
+.временной-слот.неактивный .время,
+.временной-слот.неактивный .название-занятия{
+  color: #CCCCCC;
+}
+
+.временной-слот.пустой{
+  border: none;
+  background: transparent;
+}
+
+.время{
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--основной-цвет);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.название-занятия{
+  font-size: 12px;
+  color: var(--текст-темный);
+  line-height: 1.25;
+  margin-bottom: 10px; /* отодвигаем от кнопки */
+}
+
+/* кнопка + */
+.кнопка-добавить{
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--основной-светлый);
+  border-radius: 50%;
+  background: var(--белый);
+  color: var(--основной-цвет);
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--переход);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.временной-слот.активный .кнопка-добавить{
+  border-color: var(--основной-цвет);
+}
+
+.кнопка-добавить:hover{
+  background: var(--основной-цвет);
+  color: var(--белый);
+}
+
+.временной-слот.неактивный .кнопка-добавить{
+  border-color: #E8E8E8;
+  color: #CCCCCC;
+}
+
+/* =========================
+   7) Адаптив: НЕ скрываем дни — делаем горизонтальный скролл
+   (как в styles.css правках)
+   ========================= */
+@media (max-width: 1024px){
+
+  .обертка-расписания{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  /* чтобы 7 дней реально помещались и не ломали сетку */
+  .заголовок-расписания,
+  .ряд-расписания{
+    min-width: 840px; /* 7 × ~120px */
+  }
+
+  /* критично: отменяем любые “display:none” на днях */
+  .колонка-дня,
+  .временной-слот{
+    display: flex !important;
+  }
+}
+
+@media (max-width: 768px){
+  .секция-расписание{ padding-top: 100px; }
+
+  .временной-слот{
+    min-height: 90px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .время{ font-size: 14px; }
+  .название-занятия{ font-size: 10px; }
+
+  .кнопка-добавить{
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px){
+  .название-дня{ font-size: 12px; }
+}

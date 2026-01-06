@@ -1,0 +1,653 @@
+/* =========================================================
+   reviews.css — standalone for reviews.html
+   (NO header / footer / instagram / telegram)
+   Includes: tokens + reset + layout + reviews grid + form + popups
+   ========================================================= */
+
+/* =========================================================
+   1) Design tokens
+   ========================================================= */
+:root{
+  --основной-цвет: #9B7BB8;
+  --основной-светлый: #D4A5C9;
+  --основной-темный: #7A5A9A;
+
+  --акцентный-цвет: #E8A4C9;
+  --акцентный-розовый: #F5C6D6;
+
+  --текст-темный: #4B296B;
+  --текст-светлый: #7C5A96;
+
+  --заголовок-цвет: #3A0F5C;
+
+  --белый: #FFFFFF;
+  --фон-светлый: #FDF8FB;
+  --фон-градиент: linear-gradient(135deg, #D4A5C9 0%, #9B7BB8 50%, #7A5A9A 100%);
+
+  --тень: 0 4px 20px rgba(155, 123, 184, 0.20);
+  --тень-при-наведении: 0 8px 30px rgba(155, 123, 184, 0.30);
+
+  --скругление: 20px;
+  --скругление-маленькое: 10px;
+
+  --переход: 300ms ease;
+}
+
+/* =========================================================
+   2) Base reset + global
+   ========================================================= */
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--текст-темный);
+  background: var(--белый);
+  overflow-x: hidden;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+  transition: var(--переход);
+}
+
+ul{ list-style: none; }
+
+img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   3) Layout primitives
+   ========================================================= */
+.контейнер{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section{ padding: 80px 0; }
+
+/* =========================================================
+   4) Buttons
+   ========================================================= */
+.кнопка{
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+
+  padding: 12px 30px;
+  border-radius: 25px;
+
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  transition: var(--переход);
+}
+
+.кнопка-основная{
+  background: var(--фон-градиент);
+  color: var(--белый);
+  box-shadow: var(--тень);
+}
+.кнопка-основная:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--тень-при-наведении);
+}
+
+.кнопка-контурная{
+  background: transparent;
+  color: var(--основной-цвет);
+  border: 2px solid var(--основной-цвет);
+}
+.кнопка-контурная:hover{
+  background: var(--основной-цвет);
+  color: var(--белый);
+}
+
+.кнопка-ссылка{
+  background: none;
+  padding: 10px 0;
+  color: var(--основной-цвет);
+  text-decoration: underline;
+}
+
+.кнопка-большая{
+  padding: 15px 50px;
+  font-size: 16px;
+}
+
+/* =========================================================
+   5) Section heading (h1 with line)
+   ========================================================= */
+.заголовок-секции{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.линия-секции{
+  width: 40px;
+  height: 2px;
+  background: var(--основной-цвет);
+  flex-shrink: 0;
+}
+
+.название-секции{
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--основной-цвет);
+}
+
+.подзаголовок-секции{
+  font-size: 14px;
+  color: var(--текст-светлый);
+  margin-top: -24px;
+  margin-bottom: 48px;
+  padding-left: 92px; /* line(40) + gap(22) + reserve */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   6) Utilities (minimal set)
+   ========================================================= */
+.text-center{ text-align:center !important; }
+.text-right{ text-align:right !important; }
+.text-left{ text-align:left !important; }
+
+.hidden{ display:none !important; }
+.visually-hidden{
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mt-0{ margin-top:0 !important; }
+.mt-8{ margin-top:8px !important; }
+.mt-12{ margin-top:12px !important; }
+.mt-16{ margin-top:16px !important; }
+.mt-24{ margin-top:24px !important; }
+.mt-32{ margin-top:32px !important; }
+.mt-48{ margin-top:48px !important; }
+
+.mb-0{ margin-bottom:0 !important; }
+.mb-8{ margin-bottom:8px !important; }
+.mb-12{ margin-bottom:12px !important; }
+.mb-16{ margin-bottom:16px !important; }
+.mb-24{ margin-bottom:24px !important; }
+.mb-32{ margin-bottom:32px !important; }
+.mb-48{ margin-bottom:48px !important; }
+
+.p-0{ padding:0 !important; }
+.p-12{ padding:12px !important; }
+.p-16{ padding:16px !important; }
+.p-24{ padding:24px !important; }
+
+.w-100{ width:100% !important; }
+.max-w-100{ max-width:100% !important; }
+
+.flex{ display:flex !important; }
+.flex-col{ flex-direction:column !important; }
+.items-center{ align-items:center !important; }
+.justify-center{ justify-content:center !important; }
+.justify-between{ justify-content:space-between !important; }
+
+.gap-8{ gap:8px !important; }
+.gap-12{ gap:12px !important; }
+.gap-16{ gap:16px !important; }
+
+/* =========================================================
+   7) REVIEWS page — main grid
+   ========================================================= */
+.reviews-page{ margin-top: 10px; }
+
+/* optional: actions button near heading */
+.reviews-page .page-actions{
+  display: flex;
+  justify-content: flex-end;
+  margin: -56px 0 26px; /* aligns with section heading */
+}
+
+/* 3 columns layout */
+.reviews-layout{
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.reviews-col{
+  display: grid;
+  gap: 18px;
+}
+
+/* center column */
+.reviews-col--center{ gap: 16px; }
+
+.reviews-center-media{
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1.5px solid rgba(155, 123, 184, 0.45);
+  background: #fff;
+}
+.reviews-center-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* review card */
+.review-card{
+  background: #fff;
+  border: 1.5px solid rgba(155, 123, 184, 0.55);
+  border-radius: 14px;
+  padding: 14px 16px 12px;
+  box-shadow: 0 10px 24px rgba(155, 123, 184, 0.10);
+}
+
+.review-card p{
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--текст-темный);
+}
+
+.review-card span{
+  display: block;
+  text-align: right;
+  font-weight: 600;
+  color: var(--основной-цвет);
+  font-size: 12.5px;
+}
+
+.review-card--top{ margin-bottom: 6px; }
+.review-card--center{ padding-top: 12px; }
+
+/* optional: grayscale side media */
+.feedback-media{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1.5px solid rgba(155, 123, 184, 0.35);
+  background: #fff;
+}
+.feedback-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(0.95) brightness(1.05);
+  opacity: 0.85;
+}
+
+/* =========================================================
+   8) REVIEWS: form (final version — like screenshot #2)
+   Uses: contact-split, contact-form, form-row, contact-photo
+   ========================================================= */
+.contact-split{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: stretch; /* both columns equal height */
+  margin-top: 28px;
+}
+
+.contact-form{
+  background: #fff;
+  border: 1.5px solid rgba(155, 123, 184, 0.55);
+  border-radius: 18px;
+  padding: 22px 22px 18px;
+  box-shadow: 0 10px 24px rgba(155, 123, 184, 0.10);
+}
+
+.contact-form h3{
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--текст-темный);
+}
+
+.contact-form form{
+  display: grid;
+  gap: 16px;
+}
+
+.form-row{
+  display: grid;
+  gap: 8px;
+}
+
+.form-row label{
+  display: block;
+  margin: 0 0 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--текст-светлый);
+}
+
+.form-row input,
+.form-row textarea{
+  width: 100%;
+  border-radius: 16px;
+  border: 2px solid rgba(155, 123, 184, 0.45);
+  background: #fff;
+
+  padding: 16px 18px;
+  font: inherit;
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--текст-темный);
+
+  outline: none;
+  transition: var(--переход);
+}
+
+.form-row input{ height: 64px; }
+
+.form-row textarea{
+  min-height: 180px;
+  resize: none; /* as in screenshot */
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder{
+  color: rgba(124, 90, 150, 0.55);
+}
+
+.form-row input:focus,
+.form-row textarea:focus{
+  border-color: rgba(155, 123, 184, 0.90);
+  box-shadow: 0 0 0 4px rgba(155, 123, 184, 0.16);
+}
+
+/* button in form: full width */
+.contact-form button.кнопка{
+  width: 100%;
+  justify-self: stretch;
+
+  border-radius: 18px;
+  padding: 18px 22px;
+
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  margin-top: 2px;
+}
+
+.contact-form button.кнопка-контурная{ border-width: 2px; }
+
+/* right photo: no white area */
+.contact-photo{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1.5px solid rgba(155, 123, 184, 0.35);
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(155, 123, 184, 0.10);
+
+  padding: 0;
+  min-height: 100%;
+}
+
+.contact-photo > *{ height: 100%; }
+
+.contact-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* optional: other ways + icons */
+.contact-other{
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 2px solid rgba(155, 123, 184, 0.25);
+}
+
+.contact-other p{
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--текст-светлый);
+}
+
+.иконки-соцсетей{
+  display: flex;
+  gap: 14px;
+}
+
+.иконки-соцсетей a{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid rgba(155, 123, 184, 0.45);
+  color: var(--основной-цвет);
+  background: #fff;
+
+  transition: var(--переход);
+}
+
+.иконки-соцсетей a:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(155, 123, 184, 0.18);
+}
+
+
+/* =========================================================
+   REVIEWS — compact form (like FAQ)
+   ========================================================= */
+
+/* сама карточка формы */
+.reviews-page .contact-form{
+  padding: 18px 18px 16px;   /* было 22/22/18 */
+}
+
+/* заголовок формы */
+.reviews-page .contact-form h3{
+  font-size: 18px;          /* было 22px */
+  margin-bottom: 14px;
+}
+
+/* расстояние между полями */
+.reviews-page .contact-form form{
+  gap: 12px;                /* было 16px */
+}
+
+/* строки формы */
+.reviews-page .form-row{
+  gap: 6px;                 /* было 8px */
+}
+
+/* input / textarea */
+.reviews-page .form-row input,
+.reviews-page .form-row textarea{
+  padding: 12px 14px;       /* было 16px 18px */
+  font-size: 15px;          /* было 18px */
+  border-radius: 12px;      /* было 16px */
+}
+
+/* высота input */
+.reviews-page .form-row input{
+  height: 52px;             /* было 64px */
+}
+
+/* textarea компактнее */
+.reviews-page .form-row textarea{
+  min-height: 130px;        /* было 180px */
+}
+
+/* кнопка */
+.reviews-page .contact-form button.кнопка{
+  padding: 14px 18px;       /* было 18px 22px */
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  border-radius: 14px;      /* было 18px */
+}
+
+/* блок "другие способы связи" */
+.reviews-page .contact-other{
+  margin-top: 14px;         /* было 18px */
+  padding-top: 12px;
+}
+
+/* =========================================================
+   9) OPTIONAL: Popups (success/error)
+   Uses: popup-overlay, .is-open, popup-card, popup-close...
+   ========================================================= */
+.popup-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px;
+  background: rgba(20, 10, 28, 0.55);
+}
+
+.popup-overlay.is-open{ display: flex; }
+
+.popup-card{
+  position: relative;
+  overflow: hidden;
+
+  width: min(560px, 100%);
+  background: #fff;
+
+  border-radius: 18px;
+  border: 1.5px solid rgba(155, 123, 184, 0.45);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+}
+
+.popup-close{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+
+  border: 1.5px solid rgba(155, 123, 184, 0.45);
+  background: #fff;
+  color: var(--основной-цвет);
+
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+
+  transition: var(--переход);
+}
+
+.popup-close:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(155, 123, 184, 0.18);
+}
+
+.popup-content{
+  padding: 20px 18px 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.popup-title{
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--текст-темный);
+}
+
+.popup-text{
+  margin: 0;
+  font-size: 14px;
+  color: var(--текст-светлый);
+}
+
+/* =========================================================
+   10) Responsive
+   ========================================================= */
+@media (max-width: 980px){
+
+  /* reviews grid -> single column */
+  .reviews-layout{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .reviews-page .page-actions{
+    margin: 14px 0 18px;
+    justify-content: flex-start;
+  }
+
+  /* form -> single column */
+  .contact-split{
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 18px;
+  }
+
+  .contact-photo{
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 560px){
+
+  section{ padding: 56px 0; }
+
+  .название-секции{
+    font-size: 26px;
+  }
+
+  .подзаголовок-секции{
+    padding-left: 0;
+    margin-top: 10px;
+  }
+
+  .contact-form{
+    padding: 18px 16px 14px;
+  }
+
+  .form-row input{
+    height: 58px;
+    font-size: 16px;
+  }
+
+  .form-row textarea{
+    min-height: 160px;
+    font-size: 16px;
+  }
+}

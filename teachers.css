@@ -1,0 +1,365 @@
+/* =========================================================
+   teachers.css — ONLY teachers.html page styles
+   (NO header / NO instagram / NO footer)
+   Source: teachers.html + extracted from styles.css
+   ========================================================= */
+
+/* =========================
+   1) Design tokens (needed by this page)
+   ========================= */
+:root{
+  --основной-цвет: #9B7BB8;
+  --основной-светлый: #D4A5C9;
+
+  --текст-темный: #4B296B;
+  --текст-светлый: #7C5A96;
+
+  --фон-светлый: #FDF8FB;
+  --белый: #FFFFFF;
+
+  --переход: all 0.3s ease;
+}
+
+/* =========================
+   2) Base reset (needed so layout looks the same)
+   ========================= */
+*{ margin: 0; padding: 0; box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--текст-темный);
+  background: var(--белый);
+  overflow-x: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  transition: var(--переход);
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   3) Page wrappers used in teachers.html
+   ========================= */
+.контейнер{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* main wrapper (in teachers.html: <main class="страница">) */
+.страница{
+  padding-top: 26px; /* было в styles.css для страницы */
+}
+
+/* section wrapper (in teachers.html: <section class="секция-страницы">) */
+.секция-страницы{
+  padding: 80px 0; /* аналог общего section { padding: 80px 0; } */
+}
+
+/* =========================
+   4) Buttons used in teachers.html
+   ========================= */
+.кнопка{
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--переход);
+  border: none;
+  text-align: center;
+}
+
+.кнопка-контурная{
+  background: transparent;
+  color: var(--основной-цвет);
+  border: 2px solid var(--основной-цвет);
+}
+
+.кнопка-контурная:hover{
+  background: var(--основной-цвет);
+  color: var(--белый);
+}
+
+/* =========================
+   5) Section heading pattern used inside teacher cards
+   (teachers.html uses: .заголовок-секции + .линия-секции + .название-секции)
+   ========================= */
+.заголовок-секции{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.линия-секции{
+  width: 40px;
+  height: 2px;
+  background: var(--основной-цвет);
+  flex-shrink: 0;
+}
+
+.название-секции{
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--основной-цвет);
+}
+
+/* =========================
+   6) TEACHERS page layout
+   ========================= */
+.teachers-page{
+  display: flex;
+  flex-direction: column;
+  gap: 66px;        /* финальный "дышащий" вариант */
+  margin-top: 1px;
+}
+
+/* one teacher row */
+.teacher-card{
+  display: grid;
+  grid-template-columns: 1.2fr 1.14fr; /* финальный: текст шире, фото чуть уже */
+  gap: 28px;
+  align-items: center;
+}
+
+/* reverse row (photo left, text right) */
+.teacher-card.teacher-card--reverse{
+  grid-template-columns: 1.14fr 1.2fr; /* логичный swap колонок */
+}
+
+/* container for heading + text box */
+.teacher-text-wrap{
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* heading spacing on teachers (reduce default bottom margin) */
+.teacher-heading{
+  margin: 0 0 18px;
+}
+
+/* =========================
+   7) Teacher name (override of .название-секции)
+   IMPORTANT: teacher name element has BOTH classes:
+   .название-секции + .teacher-name
+   ========================= */
+.teacher-name{
+  all: unset;
+  display: block;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+
+  color: var(--основной-цвет);
+  margin: 0 0 22px;
+}
+
+/* =========================
+   8) Teacher text box
+   ========================= */
+.teacher-text{
+  width: 100% !important;
+  max-width: none !important;
+
+  border: 2px solid rgba(143, 114, 179, 0.55);
+  border-radius: 22px;
+  padding: 30px 32px 26px;
+  background: #fff;
+
+  position: relative;
+  box-shadow: 0 10px 30px rgba(143,114,179,0.08);
+}
+
+.teacher-text p{
+  margin: 0 0 14px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--текст-темный);
+  opacity: 0.92;
+}
+
+/* button inside teacher text: full width, compact */
+.teacher-text .кнопка{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+
+/* =========================
+   9) Teacher photo block
+   ========================= */
+.teacher-photo{
+  max-width: 530px;
+  aspect-ratio: 1 / 1.15;
+  border-radius: 22px;
+  overflow: hidden;
+  justify-self: end;
+
+  background: #f3eef7;
+  min-height: 250px;
+
+  /* в styles.css было добавлено "опустить фото" */
+  margin-top: 38px;
+}
+
+.teacher-img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* optional crop tweak for specific photos (exists in teachers.html) */
+.teacher-img--shift-down{
+  object-position: center 20%;
+}
+
+/* reverse: align text-wrap like photo edge */
+.teacher-card--reverse .teacher-text-wrap{
+  justify-self: end;
+}
+
+/* =========================
+   10) Mobile / tablet
+   ========================= */
+/* =========================================================
+   TEACHERS — MOBILE (<= 860px)
+   Clean single source of truth:
+   NAME → PHOTO → TEXT
+   Full-width title + photo (with ~20px side padding)
+   Per-teacher object-position presets (mobile only)
+   ========================================================= */
+@media (max-width: 860px){
+
+  /* ===== Layout rhythm ===== */
+  .teachers-page{
+    gap: 28px;         /* расстояние МЕЖДУ тренерами (чуть больше) */
+    margin-top: 8px;   /* меньше расстояние от шапки */
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  /* если есть секция-обёртка над списком */
+  .секция-страницы{
+    padding-top: 20px; /* уменьши/увеличь по вкусу (12–28px) */
+    padding-bottom: 0;
+  }
+
+  /* ===== Card becomes column ===== */
+  .teacher-card,
+  .teacher-card.teacher-card--reverse{
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* расстояние внутри карточки (между блоками) */
+  }
+
+  /* Ключевой трюк: заголовок и текст становятся "прямыми детьми" карточки,
+     чтобы order работал даже если всё лежит внутри .teacher-text-wrap */
+  .teacher-text-wrap{
+    display: contents;
+  }
+
+  /* ===== TITLE (NAME) — first, left, full-width like photo ===== */
+  .teachers-page .teacher-heading,
+  .teachers-page .заголовок-секции{
+    order: 1;
+
+    width: calc(100vw - 40px);
+    max-width: none;
+
+    margin-left: calc(50% - 50vw + 20px);
+    margin-right: calc(50% - 50vw + 20px);
+    margin-bottom: 6px; /* расстояние до фото */
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    text-align: left;
+  }
+
+  .teachers-page .teacher-name,
+  .teachers-page .название-секции{
+    margin: 0;
+    padding: 0;
+    line-height: 1.05;
+    text-align: left;
+  }
+
+  .teachers-page .линия-секции{
+    width: 24px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  /* ===== PHOTO — second, full-width ===== */
+  .teacher-photo{
+    order: 2;
+
+    width: calc(100vw - 40px);
+    max-width: none;
+
+    margin-left: calc(50% - 50vw + 20px);
+    margin-right: calc(50% - 50vw + 20px);
+    margin-top: 0;
+
+    aspect-ratio: 1 / 1.25;
+    min-height: 220px;
+    max-height: 320px;
+
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  /* ===== TEXT — third ===== */
+  .teacher-text{
+    order: 3;
+
+    margin: 0 20px;   /* ровно как у заголовка/фото */
+    padding-top: 4;
+  }
+
+  /* ===== Image baseline + per-teacher presets (mobile only) ===== */
+  .teacher-img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 15%; /* default */
+  }
+
+  .teacher-img.pos-anastasiia{ object-position: center 50%; }
+  .teacher-img.pos-diana{     object-position: center 50%; }
+  .teacher-img.pos-nastya{    object-position: center 30%; }
+  .teacher-img.pos-sveta{     object-position: center 65%; }
+  .teacher-img.pos-mila{      object-position: center 10%; }
+  .teacher-img.pos-nastenka{  object-position: 60% 35%; }
+}
