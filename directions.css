@@ -391,13 +391,13 @@ button{ font-family: inherit; }
   }
 
   .кнопки-направлений{
-    gap: 12px;
+    gap: 10px;
   }
 
   .кнопка-направления{
-    padding: 12px 20px;
-    font-size: 12px;
-    letter-spacing: 0.06em;
+    padding: 10px 10px;
+    font-size: 11px;
+    letter-spacing: 0.05em;
   }
 
   /* Sections */
@@ -463,8 +463,8 @@ button{ font-family: inherit; }
 @media (max-width: 768px){
 
   .кнопка-направления{
-    padding: 10px 16px;
-    font-size: 11px;
+    padding: 10px 14px;
+    font-size: 10px;
   }
 
   .блок-информации h3{
@@ -486,6 +486,7 @@ button{ font-family: inherit; }
     --dir-img-h: 300px;
   }
 }
+
 
 
 /* =========================
