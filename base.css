@@ -228,7 +228,7 @@ header {
     position: relative;
     z-index: 1102;
     display: inline-flex;
-    margin-left: 0px;
+    margin-right: 0px;
   }
 
   .меню-навигации {
@@ -291,6 +291,7 @@ header {
     align-items: center;
     gap: 12px;
     margin-left: auto;
+   
   }
 
   .правая-часть-навигации .иконки-соцсетей,
@@ -310,7 +311,7 @@ header {
 .карточка-инстаграм {
   position: relative;
   display: grid;
-  grid-template-columns: 140px 1fr 220px;
+  grid-template-columns: 120px 1fr 170px;
   align-items: center;
   padding: 6px 10px;
   border-radius: 20px;
@@ -501,7 +502,7 @@ header {
   .карточка-инстаграм,
   .карточка-присоединяйся {
     display: grid;
-    grid-template-columns: 104px 1fr;  /* QR | текст */
+    grid-template-columns: 100px 1fr;  /* QR | текст */
     column-gap: 20px;
     align-items: center;
 
@@ -510,7 +511,7 @@ header {
     margin: 0;
     box-sizing: border-box;
 
-    padding: 20px 18px;    /* больше внутренние отступы */
+    padding: 10px 30px;    /* больше внутренние отступы */
     border-radius: 20px;
   }
 
@@ -531,18 +532,18 @@ header {
 
   .qr-код-инстаграм img,
   .qr-код-телеграм .qr-изображение {
-    width: 104px;
-    height: 104px;
+    width: 164px;
+    height: 164px;
     object-fit: contain;
     border-radius: 14px;
   }
 
   .qr-код-инстаграм span,
   .карточка-присоединяйся .qr-код-телеграм span {
-    display: block;
-    margin-top: 6px;
-    font-size: 12px;
-    font-weight: 600;
+    display: none;
+    margin-top: 3px;
+    font-size: 10px;
+    font-weight: 200;
   }
 
   /* текст */
@@ -555,8 +556,8 @@ header {
   }
 
   .содержимое-инстаграм h3 {
-    margin: 0 0 6px;
-    font-size: 24px;
+    margin: 0 0 16px;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.04em;
     line-height: 1.1;
@@ -564,7 +565,7 @@ header {
 
   .содержимое-инстаграм p {
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.05em;
     line-height: 1.25;
@@ -752,7 +753,7 @@ header {
   /* Grid: (line+title) / icons / button */
   .подвал .контейнер{
     display: grid;
-    grid-template-columns: 56px 1fr;
+    grid-template-columns: 50px 1fr;
     grid-template-rows: auto auto auto;
     column-gap: 16px;
     row-gap: 26px;                 /* больше воздуха между рядами */
@@ -777,7 +778,7 @@ header {
     grid-column: 2;
     grid-row: 1;
     margin: 0;
-    font-size: 26px;
+    font-size: 20px;
     line-height: 1.15;
     white-space: normal;
   }
@@ -832,7 +833,7 @@ header {
     background: none !important;
     padding: 0 !important;
 
-    font-size: 26px !important;
+    font-size: 20px !important;
     line-height: 1 !important;
     color: var(--основной-цвет);
   }
@@ -856,7 +857,7 @@ header {
     border: none !important;
 
     border-radius: 999px !important;
-    padding: 16px 22px !important;
+    padding: 16px 2px !important;
 
     box-shadow: var(--тень-мягкая) !important;
     transform: none !important;
@@ -872,6 +873,12 @@ header {
     padding-bottom: calc(40px + env(safe-area-inset-bottom));
   }
 }
+@media (max-width: 820px){
+  .подвал .линия-секции{
+    width: 36px;   /* было ~48–60px */
+  }
+}
+
 
 
 /* =========================================================
@@ -895,7 +902,7 @@ header {
   /* Burger panel: width + padding (single source of truth) */
   .меню-навигации{
     /* TUNE HERE */
-    --burger-width: min(50vw, 320px);
+    --burger-width: min(80vw, 400px);
 
     --burger-pad-top: 4px;
     --burger-pad-right: 10px;
