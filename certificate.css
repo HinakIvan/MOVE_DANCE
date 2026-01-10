@@ -443,6 +443,57 @@ img{
     padding: 26px 18px 22px;
   }
 
+  /* Универсально для всех radio-опций: кружок слева, текст сразу справа, переносы "под текст" */
+.radio-row label,
+.radio-line{
+  display: grid;
+  grid-template-columns: 18px 1fr; /* 18px под кружок, остальное — под текст */
+  align-items: start;
+  column-gap: 10px;
+
+  /* важно: никакого центрирования/растягивания */
+  justify-content: start;
+  text-align: left;
+}
+
+/* Радио-кружок не должен растягиваться и должен быть в первой колонке */
+.radio-row input[type="radio"],
+.radio-line input[type="radio"]{
+  grid-column: 1;
+  margin: 3px 0 0;   /* лёгкое выравнивание по первой строке текста */
+  flex: 0 0 auto;
+}
+
+/* Текст гарантированно во второй колонке */
+.radio-row label > :not(input),
+.radio-line > :not(input){
+  grid-column: 2;
+  min-width: 0;      /* важно для корректного переноса текста в гриде */
+}
+
+/* Если в label текст обёрнут в span/div — принудительно делаем его нормальным блоком */
+.radio-row label span,
+.radio-line span{
+  display: block;
+  text-align: left;
+}
+
+
+/* Универсальный отступ между пунктами формы */
+.cert-form-grid .form-row + .form-row{
+  margin-top: 18px;
+}
+
+/* Если нужно чуть больше именно между 4 и 5 */
+.cert-form-grid .form-row.is-gap-large{
+  margin-top: 28px;
+}
+/* Отступ между пунктами 4 и 5 */
+.grid-2.is-gap-top{
+  margin-top: 26px; /* можно 20–32px по вкусу */
+}
+
+
   .popup-content{
     grid-template-columns: 1fr;
     padding: 16px 16px 18px;
