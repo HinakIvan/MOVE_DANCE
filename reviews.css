@@ -441,7 +441,7 @@ section{ padding: 80px 0; }
   gap: 14px;
 }
 
-.иконки-соцсетей a{
+.contact-other .иконки-соцсетей a{
   width: 44px;
   height: 44px;
   border-radius: 999px;
