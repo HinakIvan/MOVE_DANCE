@@ -7,4 +7,4 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-Sitemap: https://hinakivan.github.io/MOVE_DANCE/sitemap.xml
+Sitemap: https://movedance.cz/sitemap.xml
